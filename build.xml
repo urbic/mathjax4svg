@@ -146,7 +146,7 @@
 			<arg value="${site.deploy.dir}"/>
 		</exec>
 		<copy todir="${site.deploy.dir}" overwrite="yes">
-			<fileset dir="${site.build.dir}" includes="*"/>
+			<fileset dir="${site.build.dir}" includes="**/*"/>
 		</copy>
 		<exec dir="." executable="git" os="Linux" failonerror="true">
 			<arg value="add"/>
