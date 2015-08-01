@@ -140,7 +140,7 @@
 			<arg value="checkout"/>
 			<arg value="gh-pages"/>
 		</exec>
-		<copy todir="${site.deploy.dir}">
+		<copy todir="${site.deploy.dir}" overwrite="yes">
 			<fileset dir="${site.build.dir}" includes="*"/>
 		</copy>
 		<exec dir="." executable="git" os="Linux" failonerror="true">
