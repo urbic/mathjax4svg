@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+
+<!ENTITY % ent.files	SYSTEM "namespaces.ent">
+%ent.files;
+]>
+<article
+	xml:id="MathJax4SVG"
+	version="5.0"
+	xmlns="&nsDocBook;"
+	xmlns:m="&nsMathML;"
+	xmlns:xlink="&nsXLink;"
+	xmlns:ssi="&nsSSI;"
+	xml:base="."
+	xml:lang="en"
+	>
+
+<info>
+<title>MathJax for SVG</title>
+<keywordset>
+<keyword>MathJax</keyword>
+<keyword>SVG</keyword>
+</keywordset>
+</info>
+
+<para>
+This page is also available in <link xlink:href="MathJax4SVG-ru.xhtml">Russian</link>.
+</para>
+
+<section xml:id="MathJax4SVG_Descriprion">
+<title>Description</title>
+
+<para>
+<filename>MathJax4SVG.js</filename> script provides support for <application
+xlink:href="http://mathjax.org">MathJax</application> in <acronym>SVG</acronym>
+documents.
+</para>
+
+<para>
+Currently <application>MathJax</application> renders <acronym>MathML</acronym>
+stuff only in <acronym>(X)HTML</acronym> documents. Script does a simple trick:
+it envelops <acronym>MathML</acronym> into <acronym>XHTML</acronym> document
+and injects <tag class="element">&lt;script&gt;</tag> element pointing to
+<application>MathJax</application> script into <acronym>XHTML</acronym> <tag
+class="element">&lt;head&gt;</tag> section.
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_Download">
+<title>Download</title>
+
+<itemizedlist>
+<listitem>
+<link xlink:href="MathJax4SVG.js"><filename>MathJax4SVG.js</filename>
+script</link>
+</listitem>
+<listitem>
+<link xlink:href="https://github.com/urbic/mathjax4svg">GitHub project
+page</link>
+</listitem>
+</itemizedlist>
+
+<!--para>
+The latest version of <application>MathJax4SVG</application> script can be
+<link
+xlink:href="http://sourceforge.net/projects/mathjax4svg/files/latest/download?source=files">downloaded</link>
+from SourceForge.
+</para-->
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage">
+<title>Usage</title>
+
+<para>
+There are several ways to use <acronym>SVG</acronym> content at web pages:
+
+<itemizedlist>
+
+<listitem>
+Open <acronym>SVG</acronym> document as standalone file.
+</listitem>
+
+<listitem>
+Use <acronym>SVG</acronym> documents included in <acronym>(X)HTML</acronym> via
+<tag class="element">&lt;object&gt;</tag> or <tag>&lt;iframe&gt;</tag> elements.
+</listitem>
+
+<listitem>
+Insert <acronym>SVG</acronym> content in <acronym>(X)HTML</acronym> directly.
+</listitem>
+
+<listitem>
+Use <acronym>SVG</acronym> documents included in <acronym>(X)HTML</acronym> via
+<tag class="element">&lt;img&gt;</tag> element.
+</listitem>
+
+<listitem>
+Use <acronym>SVG</acronym> documents referenced by <code>url(…)</code> clause
+in <acronym>CSS</acronym> stylesheet.
+</listitem>
+
+</itemizedlist>
+
+The last two methods preclude the use of scripting, and therefore
+<application>MathJax4SVG</application> should not be applied to them.
+</para>
+
+<section xml:id="MathJax4SVG_Usage_WithinStandaloneSVG">
+<title>Within standalone <acronym>SVG</acronym> documents</title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinStandaloneSVG.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinStandaloneSVG.svg"/></textobject></programlisting>
+
+<para>
+Note that all <acronym>MathML</acronym> entity references should be either
+resolved or declared in document type declaration.
+</para>
+
+<para>
+If <tag class="attribute">width</tag> or <tag
+class="attribute">height</tag> attribute not specified,
+<filename>MathJax4SVG.js</filename> script set the width and the height of <tag
+class="element">&lt;foreignObject&gt;</tag> automatically.
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_WithinXHTMLObjects">
+<title>Within <acronym>(X)HTML</acronym> documents including
+<acronym>SVG</acronym> as <tag class="element">&lt;object&gt;</tag>s</title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinXHTMLObjects.xhtml" format="XHTML"
+	width="250"
+	height="150"
+	/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLObjects.xhtml"/></textobject></programlisting>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLObjects.svg"/></textobject></programlisting>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_WithinXHTMLDirect">
+<title>Within <acronym>(X)HTML</acronym> documents directly including
+<acronym>SVG</acronym> content</title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinXHTMLDirect.xhtml" format="XHTML"
+	width="250"
+	height="150"
+	/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLDirect.xhtml"/></textobject></programlisting>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_LabelsPlacement">
+<title>Labels Placement</title>
+
+<para>
+<application>MathJax4SVG</application> is able to place math labels
+automatically in <acronym>SVG</acronym> figures, as well as in
+<application>MetaPost</application> or <application>Asymptote</application>.
+For this purpose it introduces several attributes in custom namespace <tag
+class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>. Namespace prefix, <tag
+class="attribute">mj4svg:</tag> for example, should be bound to this namespace
+identifier.
+
+<variablelist>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelPlacement</tag></term>
+<listitem>
+Label position relative to reference point. The presence of this attribute at
+<tag class="element">&lt;foreignObject&gt;</tag> element turns on the labels
+placement mechanism. All recognized values are self-explaining: <tag
+class="attvalue">"center"</tag>, <tag class="attvalue">"right"</tag>, <tag
+class="attvalue">"upperRight"</tag>, <tag class="attvalue">"top"</tag>, <tag
+class="attvalue">"upperLeft"</tag>, <tag class="attvalue">"left"</tag>, <tag
+class="attvalue">"lowerLeft"</tag>, <tag class="attvalue">"bottom"</tag>, <tag
+class="attvalue">"lowerRight"</tag>.
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelX</tag>, <tag class="attribute">mj4svg:labelY</tag></term>
+<listitem>
+Coordinates of label reference point. Default values are <tag
+class="attvalue">"0"</tag>.
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelOffset</tag></term>
+<listitem>
+The width of additional gap between label and reference point. Default value is
+<tag class="attvalue">".3em"</tag>.
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</para>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageLabelsPlacement.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
+
+</section>
+
+</section>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus">
+<title>Browsers Support Status</title>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus_Supported">
+<title>Supported Browsers</title>
+
+<para>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="MozillaFirefoxBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="SeaMonkeyBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="ChromeBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="ChromiumBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="KonquerorBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="AppleSafariBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus_NotSupported">
+<title>Not Supported Browsers</title>
+
+<para>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="OperaBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="InternetExplorerBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+</para>
+
+</section>
+
+</section>
+
+<section xml:id="MathJax4SVG_Author">
+<title>Author</title>
+
+<para>
+Anton Shvetz
+</para>
+
+</section>
+
+</article>
+<!--
+vim:indentexpr=
+vim:filetype=docbkxml
+-->

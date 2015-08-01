@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article [
+
+<!ENTITY % ent.files	SYSTEM "namespaces.ent">
+%ent.files;
+]>
+<article
+	xml:id="MathJax4SVG"
+	version="5.0"
+	xmlns="&nsDocBook;"
+	xmlns:m="&nsMathML;"
+	xmlns:xlink="&nsXLink;"
+	xmlns:ssi="&nsSSI;"
+	xml:base="."
+	xml:lang="ru"
+	>
+
+<info>
+<title>MathJax для SVG</title>
+<keywordset>
+<keyword>MathJax</keyword>
+<keyword>SVG</keyword>
+</keywordset>
+</info>
+
+<para>
+Имеется перевод этой страницы на <link
+xlink:href="MathJax4SVG-en.xhtml">английский</link> язык.
+</para>
+
+<section xml:id="MathJax4SVG_Descriprion">
+<title>Описание</title>
+
+<para>
+Скрипт <filename>MathJax4SVG.js</filename> обеспечивает поддержку для <application
+xlink:href="http://mathjax.org">MathJax</application> в документах <acronym>SVG</acronym>.
+</para>
+
+<para>
+В настоящее время <application>MathJax</application> отображает
+<acronym>MathML</acronym> лишь в документах <acronym>(X)HTML</acronym>. Скрипт
+делает простой трюк: он заворачивает <acronym>MathML</acronym> в
+<acronym>XHTML</acronym> документ и вставляет элемент <tag
+class="element">&lt;script&gt;</tag>, ссылающийся на скрипт
+<application>MathJax</application>, в раздел <tag
+class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML</acronym>.
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_Download">
+<title>Загрузка</title>
+
+<itemizedlist>
+<listitem>
+<link xlink:href="MathJax4SVG.js">Скрипт <filename>MathJax4SVG.js</filename></link>
+</listitem>
+<listitem>
+<link xlink:href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</link>
+</listitem>
+</itemizedlist>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage">
+<title>Использование</title>
+
+<para>
+Имеется несколько возможностей использовать <acronym>SVG</acronym> в
+веб-страницах:
+
+<itemizedlist>
+
+<listitem>
+Открыть <acronym>SVG</acronym> документ как отдельный файл.
+</listitem>
+
+<listitem>
+Вставлять <acronym>SVG</acronym> документы в <acronym>(X)HTML</acronym> при
+помощи элементов <tag class="element">&lt;object&gt;</tag> или
+<tag>&lt;iframe&gt;</tag>.
+</listitem>
+
+<listitem>
+Вставлять <acronym>SVG</acronym> непосредственно в <acronym>(X)HTML</acronym>.
+</listitem>
+
+<listitem>
+Вставлять документы <acronym>SVG</acronym> в <acronym>(X)HTML</acronym> при
+помощи элементов <tag class="element">&lt;img&gt;</tag>.
+</listitem>
+
+<listitem>
+Ссылаться на документы <acronym>SVG</acronym> в стилях <acronym>CSS</acronym>
+при помощи фраз <code>url(…)</code>.
+</listitem>
+
+</itemizedlist>
+
+Два последних способа исключают исполнение скриптов, и поэтому
+<application>MathJax4SVG</application> в них неприменим.
+</para>
+
+<section xml:id="MathJax4SVG_Usage_WithinStandaloneSVG">
+<title>Внутри отдельных документов <acronym>SVG</acronym></title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinStandaloneSVG.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinStandaloneSVG.svg"/></textobject></programlisting>
+
+<para>
+Обратите внимание, что все ссылки на сущности <acronym>MathML</acronym> должны
+быть либо разрешены, либо объявлены в декларации типа документа.
+</para>
+
+<para>
+Если атрибут <tag class="attribute">width</tag> или <tag
+class="attribute">height</tag> не указан, скрипт
+<filename>MathJax4SVG.js</filename> устанавливает ширину или высоту элемента
+<tag class="element">&lt;foreignObject&gt;</tag> автоматически.
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_WithinXHTMLObjects">
+<title>Внутри документов <acronym>(X)HTML</acronym>, включающих
+<acronym>SVG</acronym> через элементы <tag
+class="element">&lt;object&gt;</tag></title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinXHTMLObjects.xhtml" format="XHTML"
+	width="250"
+	height="150"
+	/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLObjects.xhtml"/></textobject></programlisting>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLObjects.svg"/></textobject></programlisting>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_WithinXHTMLDirect">
+<title>Внутри документов <acronym>(X)HTML</acronym>, непосредственно включающих
+<acronym>SVG</acronym></title>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageWithinXHTMLDirect.xhtml" format="XHTML"
+	width="250"
+	height="150"
+	/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageWithinXHTMLDirect.xhtml"/></textobject></programlisting>
+
+</section>
+
+<section xml:id="MathJax4SVG_Usage_LabelsPlacement">
+<title>Размещение меток</title>
+
+<para>
+<application>MathJax4SVG</application> способен размещать математические метки
+автоматически в изображениях <acronym>SVG</acronym>, точно так же, как
+<application>MetaPost</application> или <application>Asymptote</application>.
+Для этого вводится несколько атрибутов в специальном пространстве имён <tag
+class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>. Префикс
+пространства имён, например <tag class="attribute">mj4svg:</tag>, должен быть
+связан с этим идентификатором.
+
+<variablelist>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelPlacement</tag></term>
+<listitem>
+Положение метки по отношению к якорной точке. Присутствие этого атрибута в
+элементе <tag class="element">&lt;foreignObject&gt;</tag> включает механизм
+автоматического размещения меток.  Все распознаваемые значения говорят сами за
+себя: <tag class="attvalue">"center"</tag>, <tag
+class="attvalue">"right"</tag>, <tag class="attvalue">"upperRight"</tag>, <tag
+class="attvalue">"top"</tag>, <tag class="attvalue">"upperLeft"</tag>, <tag
+class="attvalue">"left"</tag>, <tag class="attvalue">"lowerLeft"</tag>, <tag
+class="attvalue">"bottom"</tag>, <tag class="attvalue">"lowerRight"</tag>.
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelX</tag>, <tag class="attribute">mj4svg:labelY</tag></term>
+<listitem>
+Координаты якорной точки. Значения по умолчанию: <tag
+class="attvalue">"0"</tag>.
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><tag class="attribute">mj4svg:labelOffset</tag></term>
+<listitem>
+Ширина дополнительного зазора между меткой и якорной точкой. Значение по
+умолчанию: <tag class="attvalue">".3em"</tag>.
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</para>
+
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/UsageLabelsPlacement.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
+<programlisting language="xml"><textobject><textdata
+fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
+
+</section>
+
+</section>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus">
+<title>Состояние поддержки браузеров</title>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus_Supported">
+<title>Поддерживаемые браузеры</title>
+
+<para>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="MozillaFirefoxBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="SeaMonkeyBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="ChromeBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="ChromiumBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="KonquerorBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="AppleSafariBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+</para>
+
+</section>
+
+<section xml:id="MathJax4SVG_BrowsersSupportStatus_NotSupported">
+<title>Не поддерживаемые браузеры</title>
+
+<para>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="OperaBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="InternetExplorerBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+</para>
+
+</section>
+
+</section>
+
+<section xml:id="MathJax4SVG_Author">
+<title>Автор</title>
+
+<para>
+Антон Швец
+</para>
+
+</section>
+
+</article>
+<!--
+vim:indentexpr=
+vim:filetype=docbkxml
+-->

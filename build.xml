@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<project
+	xmlns="antlib:org.apache.tools.ant"
+	name="mathjax4svg"
+	default="site"
+	basedir="."
+	>
+	<property name="project.name" value="${ant.project.name}"/>
+	<property name="project.title.name" value="MathJax4SVG"/>
+	<property name="project.version" value="0.2.2"/>
+	<property name="java.home.dir" location="/usr/share/java"/>
+	<property name="build.dir" location="build"/>
+	<property name="site.build.dir" location="${build.dir}/site"/>
+	<property name="site.deploy.dir" location="site"/>
+	<property name="dist.build.dir" location="${build.dir}/dist"/>
+	<property name="sources.dir" location="src"/>
+	<property name="site.sources.dir" location="${sources.dir}/site"/>
+	<property name="xslt.html.stylesheet" value="${project.title.name}.css"/>
+	<property name="xslt.highlight.xslthl.config" location="${site.sources.dir}/xslthl/highlighters/xslthl-config.xml"/>
+	<property name="sourceforge.user" value="concyclic"/>
+	<property name="deploy.site.address" value="${sourceforge.user},${project.name}@web.sourceforge.net:htdocs/"/>
+	<property name="deploy.dist.address" value="${sourceforge.user}@frs.sourceforge.net:/home/frs/project/${project.name}/"/>
+
+	<presetdef name="xslt.preset">
+		<xslt
+			style="${site.sources.dir}/xhtml.xsl"
+			basedir="${site.sources.dir}"
+			filedirparameter="${site.sources.dir}"
+			force="true"
+			>
+			<factory name="com.icl.saxon.TransformerFactoryImpl"/>
+			<xmlcatalog>
+				<catalogpath>
+					<pathelement location="${site.sources.dir}/xmlcatalog"/>
+				</catalogpath>
+			</xmlcatalog>
+			<classpath>
+				<pathelement location="${java.home.dir}/saxon6.jar"/>
+				<pathelement location="${java.home.dir}/xml-commons-resolver.jar"/>
+				<pathelement location="/usr/share/xml/docbook/stylesheet/nwalsh5/current/extensions/saxon65.jar"/>
+				<pathelement location="${java.home.dir}/batik-all.jar"/>
+				<pathelement location="${java.home.dir}/xslthl-2.1.0.jar"/>
+				<pathelement location="${java.home.dir}/xerces-j2-xml-apis.jar"/>
+			</classpath>
+			<param name="highlight.source" expression="1"/>
+			<param name="profile.status" expression="${xslt.profile.status}"/>
+			<param name="rootid" expression="${xslt.rootid}" if="${xslt.rootid}"/>
+			<param name="html.stylesheet" expression="${xslt.html.stylesheet}"/>
+			<param name="shortcut.icon" expression="${xslt.shortcut.icon}"/>
+			<!--param name="base.dir" expression="${site.build.dir}"/-->
+			<param name="link.mailto.url" expression="${xslt.link.mailto.url}"/>
+			<param name="generate.manifest" expression="0"/>
+			<param name="bibliography.numbered" expression="1"/>
+			<!--param name="icon.path" expression="img/icons/16x16/${project.name}.png"/-->
+			<param name="tablecolumns.extension" expression="${xslt.tablecolumns.extension}"/>
+			<param name="table.borders.with.css" expression="${xslt.table.borders.with.css}"/>
+			<param name="bibliography.style" expression="'iso960'"/>
+			<param name="draft.mode" expression="'maybe'"/>
+			<param name="use.webcounters" expression="${xslt.use.webcounters}"/>
+			<param name="highlight.xslthl.config" expression="file://${xslt.highlight.xslthl.config}"/>
+		</xslt>
+	</presetdef>
+
+	<macrodef name="xslt.lang">
+		<attribute name="lang"/>
+		<sequential>
+			<xslt.preset
+				includes="${project.title.name}-@{lang}.docbook"
+				out="XXX"
+				destdir="${site.build.dir}"
+				>
+				<param name="root.filename" expression="${project.title.name}"/>
+				<param name="html.ext" expression="-@{lang}.xhtml"/>
+				<param name="base.dir" expression="${site.build.dir}"/>
+				<param name="l10n.gentext.default.language" expression="@{lang}"/>
+			</xslt.preset>
+		</sequential>
+	</macrodef>
+	
+	<target name="site" description="Make site" depends="site.build.dir,css">
+		<symlink resource="${site.sources.dir}/examples" link="examples" overwrite="true"/>
+		<xslt.lang lang="en"/>
+		<xslt.lang lang="ru"/>
+		<copy todir="${site.build.dir}">
+			<fileset dir="${site.sources.dir}" includes="*.png *.svg *.jpeg *.gif *.js"/>
+			<fileset dir="${site.sources.dir}" includes="examples/**" excludes="**/.htaccess"/>
+			<fileset dir="${site.sources.dir}" includes="files/**" excludes="**/.htaccess"/>
+			<fileset dir="${site.sources.dir}" includes="*.app/**"/>
+			<fileset dir="${site.sources.dir}" includes="icons/**"/>
+			<fileset dir="${site.sources.dir}" includes="js/**"/>
+		</copy>
+		<copy todir="${site.build.dir}">
+			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
+		</copy>
+		<copy todir="${site.build.dir}/examples">
+			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
+		</copy>
+	</target>
+
+	<target name="site.build.dir" description="Make build directory">
+		<mkdir dir="${site.build.dir}"/>
+	</target>
+
+	<target name="css" description="Make CSS" depends="site.build.dir">
+		<dependset>
+			<srcfilelist dir="${site.sources.dir}" files="*.scss"/>
+			<targetfileset dir="${site.build.dir}" includes="${project.name}.css"/>
+		</dependset>
+		<!--copy todir="${build.dir}">
+			<fileset dir="${sources.dir}" includes="*.css"/>
+			<fileset dir="${share.dir}/css" includes="*.css"/>
+		</copy-->
+		<apply executable="sass" dest="${site.build.dir}" parallel="false">
+			<arg value="--style"/>
+			<arg value="compact"/>
+			<!--arg value="-+-load-path"/>
+			<arg value="${share.dir}/css"-->
+			<srcfile/>
+			<targetfile/>
+			<fileset dir="${site.sources.dir}" includes="${project.title.name}.scss"/>
+			<mapper type="glob" from="*.scss" to="*.css"/>
+		</apply>
+	</target>
+
+	<target name="dist" description="Prepare distribution">
+		<mkdir dir="${dist.build.dir}/${project.version}"/>
+		<copy todir="${dist.build.dir}/${project.version}">
+			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
+		</copy>
+	</target>
+
+	<target name="clean" description="Clean build dir">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<target name="deploy.site" description="Publish site pages" depends="site">
+		<echo message="Deploy to GitHub pages"/>
+		<mkdir dir="${site.deploy.dir}"/>
+		<copy todir="${site.deploy.dir}">
+			<fileset dir="${site.build.dir}" includes="*"/>
+		</copy>
+		<!--exec dir="." executable="rsync" os="Linux" failonerror="true">
+			<arg value="-Cativz" />
+			<arg value="- -delete"/>
+			<arg value="${site.build.dir}/"/>
+			<arg value="${deploy.site.address}/"/>
+		</exec--> 
+	</target>
+
+	<target name="deploy.dist" description="Publish site pages" depends="dist">
+		<echo message="Deploy to SourceForge (${deploy.dist.address})"/>
+		<exec dir="." executable="rsync" os="Linux" failonerror="true">
+			<arg value="-Cativz" />
+			<arg value="${dist.build.dir}/"/>
+			<arg value="${deploy.dist.address}/"/>
+		</exec> 
+	</target>
+
+	<target name="deploy" description="Deploy all stuff" depends="deploy.dist,deploy.site"/>
+
+</project>

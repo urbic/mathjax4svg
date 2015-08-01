@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	version="1.1"
+	>
+	<head>
+		<script src="MathJax4SVG.js" type="application/ecmascript"></script>
+	</head>
+	<body>
+		<p>
+			<svg
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				width="200"
+				height="200"
+				>
+				<polygon points="25 100 100 175 175 100 100 25" fill="lightgreen" stroke="darkgreen" stroke-width="2">
+					<animateTransform
+						attributeName="transform"
+						type="rotate"
+						dur="10s"
+						keyTimes="0;.5;1"
+						values="0 100 100;90 100 100;0 100 100"
+						repeatCount="indefinite"
+						additive="replace"
+						/>
+				</polygon>
+				<foreignObject x="10" y="80">
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<mfrac>
+							<mrow>
+								<mo>∂</mo>
+								<mi>S</mi>
+							</mrow>
+							<mrow>
+								<mo>∂</mo>
+								<mi>t</mi>
+							</mrow>
+						</mfrac>
+						<mo>+</mo>
+						<mi>H</mi>
+						<mo>&#x2061;</mo>
+						<mfenced>
+							<mfrac>
+								<mrow>
+									<mo>∂</mo>
+									<mi>S</mi>
+								</mrow>
+								<mrow>
+									<mo>∂</mo>
+									<mi>q</mi>
+								</mrow>
+							</mfrac>
+							<mi>q</mi>
+							<mi>t</mi>
+						</mfenced>
+						<mo>=</mo>
+						<mn>0</mn>
+					</math>
+				</foreignObject>
+			</svg>
+		</p>
+	</body>
+</html>

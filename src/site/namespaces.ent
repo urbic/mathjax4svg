@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY nsDocBook	"http://docbook.org/ns/docbook">
+<!ENTITY nsMathML	"http://www.w3.org/1998/Math/MathML">
+<!ENTITY nsHTML		"http://www.w3.org/1999/xhtml">
+<!ENTITY nsXLink	"http://www.w3.org/1999/xlink">
+<!ENTITY nsSVG		"http://www.w3.org/2000/svg">
+<!ENTITY nsXI		"http://www.w3.org/2001/XInclude">
+<!ENTITY nsHL		"http://xslthl.sf.net">
+<!ENTITY nsSSI		"urn:coneforest:xsl:xhtml:ssi">

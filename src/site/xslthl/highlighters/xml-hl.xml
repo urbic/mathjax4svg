@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<!--
+
+  Bakalarska prace: Zvyraznovani syntaxe v XSLT
+  Michal Molhanec 2005
+
+  myxml-hl.xml - konfigurace zvyraznovace XML, ktera zvlast zvyrazni
+                 HTML elementy a XSL elementy
+
+-->
+<highlighters>
+
+<wholehighlighter type='xml'>
+  <elementSet>
+    <element>svg</element>
+  </elementSet>
+</wholehighlighter>
+
+</highlighters>
