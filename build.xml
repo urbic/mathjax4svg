@@ -152,7 +152,7 @@
 			<arg value="add"/>
 			<arg value="${site.deploy.dir}"/>
 		</exec>
-		<exec dir="." executable="git" os="Linux" failonerror="true">
+		<exec dir="." executable="git" os="Linux" failonerror="false">
 			<arg value="commit"/>
 			<arg value="-m"/>
 			<arg value="Update files"/>
