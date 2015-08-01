@@ -157,7 +157,7 @@
 			<arg value="origin"/>
 		</exec>
 		<exec dir="." executable="git" os="Linux" failonerror="true">
-			<arg value="chechout"/>
+			<arg value="checkout"/>
 			<arg value="master"/>
 		</exec>
 	</target>
