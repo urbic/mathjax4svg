@@ -1,8 +1,9 @@
-# Mathjax for SVG
+# MathJax for SVG
 
 ## Description
 
-MathJax4SVG.js script provides support for MathJax in SVG documents.
+MathJax4SVG.js script provides support for
+[MathJax](https://github.com/mathjax/MathJax) in SVG documents.
 
 ## Features
 * MathJax support in standalone SVG documents and included within (X)HTML either directly or via objects
