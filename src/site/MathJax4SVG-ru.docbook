@@ -46,6 +46,14 @@ class="element">&lt;script&gt;</tag>, ссылающийся на скрипт
 class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML</acronym>.
 </para>
 
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/NewtonsMethod.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
 </section>
 
 <section xml:id="MathJax4SVG_Download">

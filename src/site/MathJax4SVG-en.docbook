@@ -45,6 +45,14 @@ and injects <tag class="element">&lt;script&gt;</tag> element pointing to
 class="element">&lt;head&gt;</tag> section.
 </para>
 
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="examples/NewtonsMethod.svg" format="SVG"/>
+</imageobject>
+</mediaobject>
+</informalfigure>
+
 </section>
 
 <section xml:id="MathJax4SVG_Download">

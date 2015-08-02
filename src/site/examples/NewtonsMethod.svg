@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+	id="svgFontMetrics"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.1"
+	viewBox="0 0 650 500"
+	width="388.4"
+	height="300.4"
+	>
+	<defs>
+		<script xlink:href="MathJax4SVG.js" type="application/ecmascript"/>
+	</defs>
+	<title>Newton’s Method</title>
+	<defs>
+		<marker
+			id="markerArrowHead"
+			viewBox="0 0 10 10"
+			refX="0"
+			refY="5"
+			markerWidth="8"
+			markerHeight="6"
+			orient="auto"
+			fill="gray"
+			>
+			<path d="M 0 0 L 10 5 0 10 z"/>
+		</marker>
+	</defs>
+	<g
+		viewBox="-100 -400 600 600"
+		transform="matrix(400 0 0 -400 120 350)"
+		>
+		<line
+			x1="-.25"
+			y1="0"
+			x2="1.25"
+			y2="0"
+			stroke="gray"
+			fill="none"
+			stroke-width=".005"
+			marker-end="url(#markerArrowHead)"
+			/>
+		<line
+			x1="0"
+			y1="-.3333"
+			x2="0"
+			y2=".8"
+			fill="none"
+			stroke="gray"
+			stroke-width=".005"
+			marker-end="url(#markerArrowHead)"
+			/>
+		<polyline
+			points=".875 0 .875 .515625 .580357142857143 0"
+			fill="none"
+			stroke="#CCC"
+			stroke-width=".005"
+			/>
+		<path
+			d="M -.25 -0.1875 Q .375 -.5 1 .75"
+			fill="none"
+			stroke="darkred"
+			stroke-width=".0075"
+			/>
+	</g>
+	<g transform="scale(2)">
+		<foreignObject transform="translate(310 180)">
+			<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<mi>x</mi>
+			</math>
+		</foreignObject>
+		<foreignObject transform="translate(48 5)">
+			<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<mi>y</mi>
+			</math>
+		</foreignObject>
+		<foreignObject transform="translate(230 177)">
+			<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<msub>
+					<mi>X</mi>
+					<mi>k</mi>
+				</msub>
+			</math>
+		</foreignObject>
+		<foreignObject transform="translate(170 177)">
+			<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<msub>
+					<mi>X</mi>
+					<mrow>
+						<mi>k</mi>
+						<mo>+</mo>
+						<mn>1</mn>
+					</mrow>
+				</msub>
+			</math>
+		</foreignObject>
+	</g>
+</svg>
