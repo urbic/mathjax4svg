@@ -247,6 +247,21 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 </section>
 
+<section xml:id="MathJax4SVG_Usage_SpecifyingMJURL">
+<title>Specifying the <application>MathJax</application> <acronym>URL</acronym></title>
+
+<para>
+<application>MathJax4SVG</application> use <tag
+class="attvalue">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML"</tag>
+as a default <application>MathJax</application> <acronym>URL</acronym>. You can
+specify another one as the value of the <tag
+class="attribute">mj4svg:mjURL</tag> attribute (in <tag
+class="attvalue">"https://github.com/urbic/mathjax4svg"</tag> namespace). The
+attribute is placed at the <acronym>SVG</acronym> root element.
+</para>
+
+</section>
+
 </section>
 
 <section xml:id="MathJax4SVG_BrowsersSupportStatus">
