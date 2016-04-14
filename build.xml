@@ -39,7 +39,7 @@
 				<pathelement location="${java.home.dir}/xml-commons-resolver.jar"/>
 				<pathelement location="/usr/share/xml/docbook/stylesheet/nwalsh5/current/extensions/saxon65.jar"/>
 				<pathelement location="${java.home.dir}/batik-all.jar"/>
-				<pathelement location="${java.home.dir}/xslthl-2.1.0.jar"/>
+				<pathelement location="${java.home.dir}/xslthl.jar"/>
 				<pathelement location="${java.home.dir}/xerces-j2-xml-apis.jar"/>
 			</classpath>
 			<param name="highlight.source" expression="1"/>
@@ -95,6 +95,7 @@
 		<copy todir="${site.build.dir}/examples">
 			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
 		</copy>
+		<symlink link="examples" action="delete"/>
 	</target>
 
 	<target name="site.build.dir" description="Make build directory">
