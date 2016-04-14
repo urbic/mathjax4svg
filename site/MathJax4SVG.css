@@ -46,4 +46,4 @@ hr { border: solid #3a5757 1px; }
 
 .toc-title, .example-title, .figure-title { font-weight: bold; font-size: small; }
 
-.application { font-weight: bold; }
+.application { font-style: italic; }

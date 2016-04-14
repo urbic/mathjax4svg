@@ -75,6 +75,9 @@ function processForeignObject(elForeignObject)
 	//var elIframe=document.createElementNS(NS_XHTML, "iframe");
 	//elIframe.style.border="none";
 
+	// fetch MJ URL
+	var mjURL=elForeignObject.ownerDocument.documentElement.getAttributeNS(NS_MATHJAX4SVG, "mjURL")||MATHJAX_URL;
+
 	var elMath=elForeignObject.firstElementChild;
 	if(elMath.nodeName!="math"||elMath.namespaceURI!=NS_MATHML) return;
 	elForeignObject.replaceChild(elIframe, elMath);
@@ -93,7 +96,7 @@ function processForeignObject(elForeignObject)
 				{
 					if(docIframeContentDocument.head.firstElementChild) return;
 					var elMathJaxScript=docIframeContentDocument.createElementNS(NS_XHTML, "script");
-					elMathJaxScript.src=MATHJAX_URL;
+					elMathJaxScript.src=mjURL;
 					elMathJaxScript.type="application/ecmascript";
 					docIframeContentDocument.head.appendChild(elMathJaxScript);
 
