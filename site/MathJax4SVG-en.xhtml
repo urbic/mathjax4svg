@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>MathJax for SVG</title><link rel="stylesheet" type="text/css" href="MathJax4SVG.css"/><link rev="made" href="${xslt.link.mailto.url}"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><meta name="keywords" content="MathJax, SVG"/><link rel="home" href="#MathJax4SVG" title="MathJax for SVG"/><link rel="next" href="#MathJax4SVG_Descriprion" title="Description"/><link rel="article" href="#MathJax4SVG" title="MathJax for SVG"/><link rel="section" href="#MathJax4SVG_Descriprion" title="Description"/><link rel="section" href="#MathJax4SVG_Download" title="Download"/><link rel="section" href="#MathJax4SVG_Usage" title="Usage"/><link rel="section" href="#MathJax4SVG_BrowsersSupportStatus" title="Browsers Support Status"/><link rel="section" href="#MathJax4SVG_Author" title="Author"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="shortcut icon" href="${xslt.shortcut.icon}" type="image/png"/><link rel="author" href="https://plus.google.com/113215332542811715537?rel=author"/><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="application/ecmascript"><!----></script></head><body><div xml:lang="en" class="article"><div class="titlepage"><div><div><h1 class="title"><a id="MathJax4SVG"/>MathJax for SVG</h1></div></div><hr/></div><div class="toc"><div class="toc-title">Table of Contents</div><dl class="toc"><dt><span class="section"><a href="#MathJax4SVG_Descriprion">Description</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Download">Download</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage">Usage</a></span></dt><dd><dl><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinStandaloneSVG">Within standalone <acronym class="acronym">SVG</acronym> documents</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinXHTMLObjects">Within <acronym class="acronym">(X)HTML</acronym> documents including
+<acronym class="acronym">SVG</acronym> as <code class="sgmltag-element">&lt;object&gt;</code>s</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinXHTMLDirect">Within <acronym class="acronym">(X)HTML</acronym> documents directly including
+<acronym class="acronym">SVG</acronym> content</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_LabelsPlacement">Labels Placement</a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus">Browsers Support Status</a></span></dt><dd><dl><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_Supported">Supported Browsers</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_NotSupported">Not Supported Browsers</a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_Author">Author</a></span></dt></dl></div><p>
+This page is also available in <a class="link" href="MathJax4SVG-ru.xhtml">Russian</a>.
+</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Descriprion"/>Description</h2></div></div></div><p>
+<code class="filename">MathJax4SVG.js</code> script provides support for <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> in <acronym class="acronym">SVG</acronym>
+documents.
+</p><p>
+Currently <span class="application">MathJax</span> renders <acronym class="acronym">MathML</acronym>
+stuff only in <acronym class="acronym">(X)HTML</acronym> documents. Script does a simple trick:
+it envelops <acronym class="acronym">MathML</acronym> into <acronym class="acronym">XHTML</acronym> document
+and injects <code class="sgmltag-element">&lt;script&gt;</code> element pointing to
+<span class="application">MathJax</span> script into <acronym class="acronym">XHTML</acronym> <code class="sgmltag-element">&lt;head&gt;</code> section.
+</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Download"/>Download</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><a class="link" href="MathJax4SVG.js"><code class="filename">MathJax4SVG.js</code>
+script</a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">GitHub project
+page</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Usage"/>Usage</h2></div></div></div><p>
+There are several ways to use <acronym class="acronym">SVG</acronym> content at web pages:
+
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+Open <acronym class="acronym">SVG</acronym> document as standalone file.
+</li><li class="listitem">
+Use <acronym class="acronym">SVG</acronym> documents included in <acronym class="acronym">(X)HTML</acronym> via
+<code class="sgmltag-element">&lt;object&gt;</code> or <code class="sgmltag-element">&lt;iframe&gt;</code> elements.
+</li><li class="listitem">
+Insert <acronym class="acronym">SVG</acronym> content in <acronym class="acronym">(X)HTML</acronym> directly.
+</li><li class="listitem">
+Use <acronym class="acronym">SVG</acronym> documents included in <acronym class="acronym">(X)HTML</acronym> via
+<code class="sgmltag-element">&lt;img&gt;</code> element.
+</li><li class="listitem">
+Use <acronym class="acronym">SVG</acronym> documents referenced by <code class="code">url(…)</code> clause
+in <acronym class="acronym">CSS</acronym> stylesheet.
+</li></ul></div><p>
+
+The last two methods preclude the use of scripting, and therefore
+<span class="application">MathJax4SVG</span> should not be applied to them.
+</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_WithinStandaloneSVG"/>Within standalone <acronym class="acronym">SVG</acronym> documents</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/UsageWithinStandaloneSVG.svg"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="hl-doctype">&lt;!DOCTYPE svg [
+&lt;!ENTITY it "&amp;#x2062;"&gt;
+&lt;!ENTITY leqslant "&amp;#x2A7D;"&gt;
+]&gt;</span>
+<span class="hl-tag">&lt;svg</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/2000/svg"</span>
+	<span class="hl-attribute">xmlns:xlink</span>=<span class="hl-value">"http://www.w3.org/1999/xlink"</span>
+	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span>
+	<span class="hl-attribute">viewBox</span>=<span class="hl-value">"0 0 200 200"</span>
+	<span class="hl-attribute">width</span>=<span class="hl-value">"200"</span>
+	<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
+	&gt;</span>
+	<span class="hl-tag">&lt;defs&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
+	<span class="hl-tag">&lt;/defs&gt;</span>
+	<span class="hl-tag">&lt;circle</span> <span class="hl-attribute">cx</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">cy</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">r</span>=<span class="hl-value">"75"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"lightblue"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"navy"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">/&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">x</span>=<span class="hl-value">"60"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"85"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span>
+			<span class="hl-tag">&lt;msqrt&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>x<span class="hl-tag">&lt;/mi&gt;</span>
+				<span class="hl-tag">&lt;mo&gt;</span>&amp;it;<span class="hl-tag">&lt;/mo&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>y<span class="hl-tag">&lt;/mi&gt;</span>
+			<span class="hl-tag">&lt;/msqrt&gt;</span>
+			<span class="hl-tag">&lt;mo&gt;</span>&amp;leqslant;<span class="hl-tag">&lt;/mo&gt;</span>
+			<span class="hl-tag">&lt;mfrac&gt;</span>
+				<span class="hl-tag">&lt;mrow&gt;</span>
+					<span class="hl-tag">&lt;mi&gt;</span>x<span class="hl-tag">&lt;/mi&gt;</span>
+					<span class="hl-tag">&lt;mo&gt;</span>+<span class="hl-tag">&lt;/mo&gt;</span>
+					<span class="hl-tag">&lt;mi&gt;</span>y<span class="hl-tag">&lt;/mi&gt;</span>
+				<span class="hl-tag">&lt;/mrow&gt;</span>
+				<span class="hl-tag">&lt;mn&gt;</span>2<span class="hl-tag">&lt;/mn&gt;</span>
+			<span class="hl-tag">&lt;/mfrac&gt;</span>
+		<span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+<span class="hl-tag">&lt;/svg&gt;</span></pre><p>
+Note that all <acronym class="acronym">MathML</acronym> entity references should be either
+resolved or declared in document type declaration.
+</p><p>
+If <code class="sgmltag-attribute">width</code> or <code class="sgmltag-attribute">height</code> attribute not specified,
+<code class="filename">MathJax4SVG.js</code> script set the width and the height of <code class="sgmltag-element">&lt;foreignObject&gt;</code> automatically.
+</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_WithinXHTMLObjects"/>Within <acronym class="acronym">(X)HTML</acronym> documents including
+<acronym class="acronym">SVG</acronym> as <code class="sgmltag-element">&lt;object&gt;</code>s</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><object type="application/xhtml+xml" data="examples/UsageWithinXHTMLObjects.xhtml" width="250" height="150"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="hl-tag">&lt;html</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1999/xhtml"</span>
+	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span><span class="hl-tag">
+	&gt;</span>
+	<span class="hl-tag">&lt;head&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
+	<span class="hl-tag">&lt;/head&gt;</span>
+	<span class="hl-tag">&lt;body&gt;</span>
+		<span class="hl-tag">&lt;p&gt;</span>
+			<span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">"UsageWithinXHTMLObjects.svg"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"image/svg+xml"</span><span class="hl-tag">/&gt;</span>
+		<span class="hl-tag">&lt;/p&gt;</span>
+	<span class="hl-tag">&lt;/body&gt;</span>
+<span class="hl-tag">&lt;/html&gt;</span></pre><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="hl-tag">&lt;svg</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/2000/svg"</span>
+	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span>
+	<span class="hl-attribute">width</span>=<span class="hl-value">"200"</span>
+	<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
+	&gt;</span>
+	<span class="hl-tag">&lt;rect</span> <span class="hl-attribute">x</span>=<span class="hl-value">"25"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"25"</span> <span class="hl-attribute">width</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">height</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"wheat"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"orange"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">/&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">x</span>=<span class="hl-value">"32.5"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"80"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span>
+			<span class="hl-tag">&lt;munderover&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>∫<span class="hl-tag">&lt;/mi&gt;</span>
+				<span class="hl-tag">&lt;mrow&gt;</span>
+					<span class="hl-tag">&lt;mi&gt;</span>−<span class="hl-tag">&lt;/mi&gt;</span>
+					<span class="hl-tag">&lt;mi&gt;</span>∞<span class="hl-tag">&lt;/mi&gt;</span>
+				<span class="hl-tag">&lt;/mrow&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>∞<span class="hl-tag">&lt;/mi&gt;</span>
+			<span class="hl-tag">&lt;/munderover&gt;</span>
+			<span class="hl-tag">&lt;msup&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>e<span class="hl-tag">&lt;/mi&gt;</span>
+				<span class="hl-tag">&lt;mrow&gt;</span>
+					<span class="hl-tag">&lt;mi&gt;</span>−<span class="hl-tag">&lt;/mi&gt;</span>
+					<span class="hl-tag">&lt;msup&gt;</span>
+						<span class="hl-tag">&lt;mi&gt;</span>x<span class="hl-tag">&lt;/mi&gt;</span>
+						<span class="hl-tag">&lt;mn&gt;</span>2<span class="hl-tag">&lt;/mn&gt;</span>
+					<span class="hl-tag">&lt;/msup&gt;</span>
+				<span class="hl-tag">&lt;/mrow&gt;</span>
+			<span class="hl-tag">&lt;/msup&gt;</span>
+			<span class="hl-tag">&lt;mspace</span> <span class="hl-attribute">width</span>=<span class="hl-value">"thinmathspace"</span><span class="hl-tag">/&gt;</span>
+			<span class="hl-tag">&lt;mi&gt;</span>d<span class="hl-tag">&lt;/mi&gt;</span>
+			<span class="hl-tag">&lt;mi&gt;</span>x<span class="hl-tag">&lt;/mi&gt;</span>
+			<span class="hl-tag">&lt;mo&gt;</span>=<span class="hl-tag">&lt;/mo&gt;</span>
+			<span class="hl-tag">&lt;msqrt&gt;</span>
+				<span class="hl-tag">&lt;mi&gt;</span>π<span class="hl-tag">&lt;/mi&gt;</span>
+			<span class="hl-tag">&lt;/msqrt&gt;</span>
+		<span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+<span class="hl-tag">&lt;/svg&gt;</span></pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_WithinXHTMLDirect"/>Within <acronym class="acronym">(X)HTML</acronym> documents directly including
+<acronym class="acronym">SVG</acronym> content</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><object type="application/xhtml+xml" data="examples/UsageWithinXHTMLDirect.xhtml" width="250" height="150"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="hl-tag">&lt;html</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1999/xhtml"</span>
+	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span><span class="hl-tag">
+	&gt;</span>
+	<span class="hl-tag">&lt;head&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
+	<span class="hl-tag">&lt;/head&gt;</span>
+	<span class="hl-tag">&lt;body&gt;</span>
+		<span class="hl-tag">&lt;p&gt;</span>
+			<span class="hl-tag">&lt;svg</span>
+				<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span>
+				<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/2000/svg"</span>
+				<span class="hl-attribute">width</span>=<span class="hl-value">"200"</span>
+				<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
+				&gt;</span>
+				<span class="hl-tag">&lt;polygon</span> <span class="hl-attribute">points</span>=<span class="hl-value">"25 100 100 175 175 100 100 25"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"lightgreen"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"darkgreen"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">&gt;</span>
+					<span class="hl-tag">&lt;animateTransform</span>
+						<span class="hl-attribute">attributeName</span>=<span class="hl-value">"transform"</span>
+						<span class="hl-attribute">type</span>=<span class="hl-value">"rotate"</span>
+						<span class="hl-attribute">dur</span>=<span class="hl-value">"10s"</span>
+						<span class="hl-attribute">keyTimes</span>=<span class="hl-value">"0;.5;1"</span>
+						<span class="hl-attribute">values</span>=<span class="hl-value">"0 100 100;90 100 100;0 100 100"</span>
+						<span class="hl-attribute">repeatCount</span>=<span class="hl-value">"indefinite"</span>
+						<span class="hl-attribute">additive</span>=<span class="hl-value">"replace"</span><span class="hl-tag">
+						/&gt;</span>
+				<span class="hl-tag">&lt;/polygon&gt;</span>
+				<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">x</span>=<span class="hl-value">"10"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"80"</span><span class="hl-tag">&gt;</span>
+					<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span>
+						<span class="hl-tag">&lt;mfrac&gt;</span>
+							<span class="hl-tag">&lt;mrow&gt;</span>
+								<span class="hl-tag">&lt;mo&gt;</span>∂<span class="hl-tag">&lt;/mo&gt;</span>
+								<span class="hl-tag">&lt;mi&gt;</span>S<span class="hl-tag">&lt;/mi&gt;</span>
+							<span class="hl-tag">&lt;/mrow&gt;</span>
+							<span class="hl-tag">&lt;mrow&gt;</span>
+								<span class="hl-tag">&lt;mo&gt;</span>∂<span class="hl-tag">&lt;/mo&gt;</span>
+								<span class="hl-tag">&lt;mi&gt;</span>t<span class="hl-tag">&lt;/mi&gt;</span>
+							<span class="hl-tag">&lt;/mrow&gt;</span>
+						<span class="hl-tag">&lt;/mfrac&gt;</span>
+						<span class="hl-tag">&lt;mo&gt;</span>+<span class="hl-tag">&lt;/mo&gt;</span>
+						<span class="hl-tag">&lt;mi&gt;</span>H<span class="hl-tag">&lt;/mi&gt;</span>
+						<span class="hl-tag">&lt;mo&gt;</span>&amp;#x2061;<span class="hl-tag">&lt;/mo&gt;</span>
+						<span class="hl-tag">&lt;mfenced&gt;</span>
+							<span class="hl-tag">&lt;mfrac&gt;</span>
+								<span class="hl-tag">&lt;mrow&gt;</span>
+									<span class="hl-tag">&lt;mo&gt;</span>∂<span class="hl-tag">&lt;/mo&gt;</span>
+									<span class="hl-tag">&lt;mi&gt;</span>S<span class="hl-tag">&lt;/mi&gt;</span>
+								<span class="hl-tag">&lt;/mrow&gt;</span>
+								<span class="hl-tag">&lt;mrow&gt;</span>
+									<span class="hl-tag">&lt;mo&gt;</span>∂<span class="hl-tag">&lt;/mo&gt;</span>
+									<span class="hl-tag">&lt;mi&gt;</span>q<span class="hl-tag">&lt;/mi&gt;</span>
+								<span class="hl-tag">&lt;/mrow&gt;</span>
+							<span class="hl-tag">&lt;/mfrac&gt;</span>
+							<span class="hl-tag">&lt;mi&gt;</span>q<span class="hl-tag">&lt;/mi&gt;</span>
+							<span class="hl-tag">&lt;mi&gt;</span>t<span class="hl-tag">&lt;/mi&gt;</span>
+						<span class="hl-tag">&lt;/mfenced&gt;</span>
+						<span class="hl-tag">&lt;mo&gt;</span>=<span class="hl-tag">&lt;/mo&gt;</span>
+						<span class="hl-tag">&lt;mn&gt;</span>0<span class="hl-tag">&lt;/mn&gt;</span>
+					<span class="hl-tag">&lt;/math&gt;</span>
+				<span class="hl-tag">&lt;/foreignObject&gt;</span>
+			<span class="hl-tag">&lt;/svg&gt;</span>
+		<span class="hl-tag">&lt;/p&gt;</span>
+	<span class="hl-tag">&lt;/body&gt;</span>
+<span class="hl-tag">&lt;/html&gt;</span></pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_LabelsPlacement"/>Labels Placement</h3></div></div></div><p>
+<span class="application">MathJax4SVG</span> is able to place math labels
+automatically in <acronym class="acronym">SVG</acronym> figures, as well as in
+<span class="application">MetaPost</span> or <span class="application">Asymptote</span>.
+For this purpose it introduces several attributes in custom namespace <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>. Namespace prefix, <code class="sgmltag-attribute">mj4svg:</code> for example, should be bound to this namespace
+identifier.
+
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="sgmltag-attribute">mj4svg:labelPlacement</code></span></dt><dd>
+Label position relative to reference point. The presence of this attribute at
+<code class="sgmltag-element">&lt;foreignObject&gt;</code> element turns on the labels
+placement mechanism. All recognized values are self-explaining: <code class="sgmltag-attvalue">"center"</code>, <code class="sgmltag-attvalue">"right"</code>, <code class="sgmltag-attvalue">"upperRight"</code>, <code class="sgmltag-attvalue">"top"</code>, <code class="sgmltag-attvalue">"upperLeft"</code>, <code class="sgmltag-attvalue">"left"</code>, <code class="sgmltag-attvalue">"lowerLeft"</code>, <code class="sgmltag-attvalue">"bottom"</code>, <code class="sgmltag-attvalue">"lowerRight"</code>.
+</dd><dt><span class="term"><code class="sgmltag-attribute">mj4svg:labelX</code>, <code class="sgmltag-attribute">mj4svg:labelY</code></span></dt><dd>
+Coordinates of label reference point. Default values are <code class="sgmltag-attvalue">"0"</code>.
+</dd><dt><span class="term"><code class="sgmltag-attribute">mj4svg:labelOffset</code></span></dt><dd>
+The width of additional gap between label and reference point. Default value is
+<code class="sgmltag-attvalue">".3em"</code>.
+</dd></dl></div><p>
+
+</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/UsageLabelsPlacement.svg"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="hl-tag">&lt;svg</span>
+	<span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/2000/svg"</span>
+	<span class="hl-attribute">xmlns:xlink</span>=<span class="hl-value">"http://www.w3.org/1999/xlink"</span>
+	<span class="hl-attribute">xmlns:mj4svg</span>=<span class="hl-value">"https://github.com/urbic/mathjax4svg"</span>
+	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span>
+	<span class="hl-attribute">viewBox</span>=<span class="hl-value">"0 0 200 200"</span>
+	<span class="hl-attribute">width</span>=<span class="hl-value">"200"</span>
+	<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
+	&gt;</span>
+	<span class="hl-tag">&lt;defs&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
+	<span class="hl-tag">&lt;/defs&gt;</span>
+	<span class="hl-tag">&lt;rect</span> <span class="hl-attribute">x</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">width</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">height</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"seagreen"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"darkslategray"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">/&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"left"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>L<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"top"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>T<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"right"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>R<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"bottom"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>B<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"upperLeft"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>UL<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"lowerLeft"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>LL<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"lowerRight"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>LR<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"150"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"upperRight"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>UR<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"center"</span><span class="hl-tag">&gt;</span>
+		<span class="hl-tag">&lt;math</span> <span class="hl-attribute">xmlns</span>=<span class="hl-value">"http://www.w3.org/1998/Math/MathML"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;mtext&gt;</span>C<span class="hl-tag">&lt;/mtext&gt;</span><span class="hl-tag">&lt;/math&gt;</span>
+	<span class="hl-tag">&lt;/foreignObject&gt;</span>
+<span class="hl-tag">&lt;/svg&gt;</span></pre></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_BrowsersSupportStatus"/>Browsers Support Status</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_BrowsersSupportStatus_Supported"/>Supported Browsers</h3></div></div></div><p>
+
+<span class="inlinemediaobject"><img src="MozillaFirefoxBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="SeaMonkeyBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="ChromeBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="ChromiumBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="KonquerorBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="AppleSafariBrowser.png"/></span>
+
+<span class="inlinemediaobject"><img src="OperaBrowser.png"/></span>
+
+</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_BrowsersSupportStatus_NotSupported"/>Not Supported Browsers</h3></div></div></div><p>
+
+<span class="inlinemediaobject"><img src="InternetExplorerBrowser.png"/></span>
+
+</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Author"/>Author</h2></div></div></div><p>
+Anton Shvetz
+</p></div></div></body></html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg [
+<!ENTITY it "&#x2062;">
+<!ENTITY leqslant "&#x2A7D;">
+]>
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.1"
+	viewBox="0 0 200 200"
+	width="200"
+	height="200"
+	>
+	<defs>
+		<script xlink:href="MathJax4SVG.js" type="application/ecmascript"/>
+	</defs>
+	<circle cx="100" cy="100" r="75" fill="lightblue" stroke="navy" stroke-width="2"/>
+	<foreignObject x="60" y="85">
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+			<msqrt>
+				<mi>x</mi>
+				<mo>&it;</mo>
+				<mi>y</mi>
+			</msqrt>
+			<mo>&leqslant;</mo>
+			<mfrac>
+				<mrow>
+					<mi>x</mi>
+					<mo>+</mo>
+					<mi>y</mi>
+				</mrow>
+				<mn>2</mn>
+			</mfrac>
+		</math>
+	</foreignObject>
+</svg>
