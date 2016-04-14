@@ -108,7 +108,7 @@ function processForeignObject(elForeignObject)
 				return;				
 			}
 			docIframeContentDocument.body.style.backgroundColor="none";
-			docIframeContentDocument.body.style.margin="0 0 0 0";
+			docIframeContentDocument.body.style.margin="2";
 			docIframeContentDocument.body.appendChild(docIframeContentDocument.adoptNode(elMath));
 			
 			innerWindow.MathJax.Hub.Config({
@@ -119,9 +119,9 @@ function processForeignObject(elForeignObject)
 					var elMathSpan=docIframeContentDocument.getElementsByClassName("math")[0];
 					var rectMathSpan=elMathSpan.getBoundingClientRect();
 					if(elForeignObject.getAttribute("width")==null)
-						elForeignObject.setAttribute("width", rectMathSpan.width);
+						elForeignObject.setAttribute("width", rectMathSpan.width+4);
 					if(elForeignObject.getAttribute("height")==null)
-						elForeignObject.setAttribute("height", rectMathSpan.height);
+						elForeignObject.setAttribute("height", rectMathSpan.height+4);
 
 					// label placement
 					var labelPlacement=elForeignObject.getAttributeNS(NS_MATHJAX4SVG, "labelPlacement");
@@ -129,7 +129,7 @@ function processForeignObject(elForeignObject)
 					{
 						var labelX=parseFloat(elForeignObject.getAttributeNS(NS_MATHJAX4SVG, "labelX"))||0;
 						var labelY=parseFloat(elForeignObject.getAttributeNS(NS_MATHJAX4SVG, "labelY"))||0;
-						var labelLeft=labelX, labelTop=labelY;
+						var labelLeft=labelX-2, labelTop=labelY-2;
 						
 
 						var dummy=elForeignObject.ownerDocument.createElementNS(NS_SVG, "defs");

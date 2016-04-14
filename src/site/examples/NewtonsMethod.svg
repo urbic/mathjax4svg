@@ -64,17 +64,17 @@
 			/>
 	</g>
 	<g transform="scale(2)">
-		<foreignObject transform="translate(310 180)">
+		<foreignObject transform="translate(307 180)">
 			<math xmlns="http://www.w3.org/1998/Math/MathML">
 				<mi>x</mi>
 			</math>
 		</foreignObject>
-		<foreignObject transform="translate(48 5)">
+		<foreignObject transform="translate(45 5)">
 			<math xmlns="http://www.w3.org/1998/Math/MathML">
 				<mi>y</mi>
 			</math>
 		</foreignObject>
-		<foreignObject transform="translate(230 177)">
+		<foreignObject transform="translate(227 177)">
 			<math xmlns="http://www.w3.org/1998/Math/MathML">
 				<msub>
 					<mi>X</mi>
@@ -82,7 +82,7 @@
 				</msub>
 			</math>
 		</foreignObject>
-		<foreignObject transform="translate(170 177)">
+		<foreignObject transform="translate(167 177)">
 			<math xmlns="http://www.w3.org/1998/Math/MathML">
 				<msub>
 					<mi>X</mi>
