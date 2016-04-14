@@ -176,6 +176,9 @@
 		</exec> 
 	</target>
 
+	<target name="gh-pages">
+	</target>
+
 	<target name="deploy" description="Deploy all stuff" depends="deploy.dist,deploy.site"/>
 
 </project>

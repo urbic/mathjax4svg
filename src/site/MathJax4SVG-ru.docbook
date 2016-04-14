@@ -288,6 +288,12 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 </imageobject>
 </inlinemediaobject>
 
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="OperaBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
 </para>
 
 </section>
@@ -296,12 +302,6 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 <title>Не поддерживаемые браузеры</title>
 
 <para>
-
-<inlinemediaobject>
-<imageobject>
-<imagedata fileref="OperaBrowser.png" format="PNG"/>
-</imageobject>
-</inlinemediaobject>
 
 <inlinemediaobject>
 <imageobject>
