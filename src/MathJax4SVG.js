@@ -5,7 +5,9 @@ const NS_XHTML="http://www.w3.org/1999/xhtml";
 const NS_MATHML="http://www.w3.org/1998/Math/MathML";
 const NS_SVG="http://www.w3.org/2000/svg";
 const NS_MATHJAX4SVG="https://github.com/urbic/mathjax4svg";
-const MATHJAX_URL="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML";
+// const MATHJAX_URL="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML";
+// see https://www.mathjax.org/cdn-shutting-down/
+const MATHJAX_URL="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML";
 const SQRT2=Math.sqrt(2);
 const DEFAULT_LABEL_OFFSET=".3em";
 

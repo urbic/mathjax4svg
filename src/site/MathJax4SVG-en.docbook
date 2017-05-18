@@ -252,7 +252,7 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 <para>
 <application>MathJax4SVG</application> use <tag
-class="attvalue">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML"</tag>
+class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML"</tag>
 as a default <application>MathJax</application> <acronym>URL</acronym>. You can
 specify another one as the value of the <tag
 class="attribute">mj4svg:mjURL</tag> attribute (in <tag
