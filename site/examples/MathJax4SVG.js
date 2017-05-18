@@ -97,6 +97,7 @@ function processForeignObject(elForeignObject)
 					if(docIframeContentDocument.head.firstElementChild) return;
 					var elMathJaxScript=docIframeContentDocument.createElementNS(NS_XHTML, "script");
 					elMathJaxScript.src=mjURL;
+					elMathJaxScript.async=true;
 					elMathJaxScript.type="application/ecmascript";
 					docIframeContentDocument.head.appendChild(elMathJaxScript);
 
