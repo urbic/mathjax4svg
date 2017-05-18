@@ -33,16 +33,16 @@ xlink:href="MathJax4SVG-en.xhtml">английский</link> язык.
 
 <para>
 Скрипт <filename>MathJax4SVG.js</filename> обеспечивает поддержку для <application
-xlink:href="http://mathjax.org">MathJax</application> в документах <acronym>SVG</acronym>.
+xlink:href="http://mathjax.org">MathJax</application> в документах <acronym>SVG</acronym>.
 </para>
 
 <para>
-В настоящее время <application>MathJax</application> отображает
-<acronym>MathML</acronym> лишь в документах <acronym>(X)HTML</acronym>. Скрипт
-делает простой трюк: он заворачивает <acronym>MathML</acronym> в
-<acronym>XHTML</acronym> документ и вставляет элемент <tag
+В настоящее время <application>MathJax</application> отображает
+<acronym>MathML</acronym> лишь в документах <acronym>(X)HTML</acronym>. Скрипт
+делает простой трюк: он заворачивает <acronym>MathML</acronym>
+в <acronym>XHTML</acronym> документ и вставляет элемент <tag
 class="element">&lt;script&gt;</tag>, ссылающийся на скрипт
-<application>MathJax</application>, в раздел <tag
+<application>MathJax</application>, в раздел <tag
 class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML</acronym>.
 </para>
 
@@ -74,8 +74,8 @@ class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML<
 <title>Использование</title>
 
 <para>
-Имеется несколько возможностей использовать <acronym>SVG</acronym> в
-веб-страницах:
+Имеется несколько возможностей использовать <acronym>SVG</acronym>
+в веб-страницах:
 
 <itemizedlist>
 
@@ -84,29 +84,29 @@ class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML<
 </listitem>
 
 <listitem>
-Вставлять <acronym>SVG</acronym> документы в <acronym>(X)HTML</acronym> при
+Вставлять <acronym>SVG</acronym> документы в <acronym>(X)HTML</acronym> при
 помощи элементов <tag class="element">&lt;object&gt;</tag> или
 <tag>&lt;iframe&gt;</tag>.
 </listitem>
 
 <listitem>
-Вставлять <acronym>SVG</acronym> непосредственно в <acronym>(X)HTML</acronym>.
+Вставлять <acronym>SVG</acronym> непосредственно в <acronym>(X)HTML</acronym>.
 </listitem>
 
 <listitem>
-Вставлять документы <acronym>SVG</acronym> в <acronym>(X)HTML</acronym> при
+Вставлять документы <acronym>SVG</acronym> в <acronym>(X)HTML</acronym> при
 помощи элементов <tag class="element">&lt;img&gt;</tag>.
 </listitem>
 
 <listitem>
-Ссылаться на документы <acronym>SVG</acronym> в стилях <acronym>CSS</acronym>
+Ссылаться на документы <acronym>SVG</acronym> в стилях <acronym>CSS</acronym>
 при помощи фраз <code>url(…)</code>.
 </listitem>
 
 </itemizedlist>
 
 Два последних способа исключают исполнение скриптов, и поэтому
-<application>MathJax4SVG</application> в них неприменим.
+<application>MathJax4SVG</application> в них неприменим.
 </para>
 
 <section xml:id="MathJax4SVG_Usage_WithinStandaloneSVG">
@@ -125,7 +125,7 @@ fileref="examples/UsageWithinStandaloneSVG.svg"/></textobject></programlisting>
 
 <para>
 Обратите внимание, что все ссылки на сущности <acronym>MathML</acronym> должны
-быть либо разрешены, либо объявлены в декларации типа документа.
+быть либо разрешены, либо объявлены в декларации типа документа.
 </para>
 
 <para>
@@ -186,20 +186,20 @@ fileref="examples/UsageWithinXHTMLDirect.xhtml"/></textobject></programlisting>
 
 <para>
 <application>MathJax4SVG</application> способен размещать математические метки
-автоматически в изображениях <acronym>SVG</acronym>, точно так же, как
+автоматически в изображениях <acronym>SVG</acronym>, точно так же, как
 <application>MetaPost</application> или <application>Asymptote</application>.
-Для этого вводится несколько атрибутов в специальном пространстве имён <tag
+Для этого вводится несколько атрибутов в специальном пространстве имён <tag
 class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>. Префикс
 пространства имён, например <tag class="attribute">mj4svg:</tag>, должен быть
-связан с этим идентификатором.
+связан с этим идентификатором.
 
 <variablelist>
 
 <varlistentry>
 <term><tag class="attribute">mj4svg:labelPlacement</tag></term>
 <listitem>
-Положение метки по отношению к якорной точке. Присутствие этого атрибута в
-элементе <tag class="element">&lt;foreignObject&gt;</tag> включает механизм
+Положение метки по отношению к якорной точке. Присутствие этого атрибута
+в элементе <tag class="element">&lt;foreignObject&gt;</tag> включает механизм
 автоматического размещения меток.  Все распознаваемые значения говорят сами за
 себя: <tag class="attvalue">"center"</tag>, <tag
 class="attvalue">"right"</tag>, <tag class="attvalue">"upperRight"</tag>, <tag
@@ -250,9 +250,9 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 class="attvalue">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML"</tag>
 как <application>MathJax</application> <acronym>URL</acronym>. Можно
 указать другой как значение атрибута <tag
-class="attribute">mj4svg:mjURL</tag> (в пространстве имён <tag
+class="attribute">mj4svg:mjURL</tag> (в пространстве имён <tag
 class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>). Атрибут
-задаётся в корневом элементе <acronym>SVG</acronym>.
+задаётся в корневом элементе <acronym>SVG</acronym>.
 </para>
 
 </section>
