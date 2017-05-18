@@ -6,35 +6,35 @@
 <acronym class="acronym">SVG</acronym></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_LabelsPlacement">Размещение меток</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_SpecifyingMJURL">Альтернативный <acronym class="acronym">URL</acronym> <span class="application">MathJax</span></a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus">Состояние поддержки браузеров</a></span></dt><dd><dl><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_Supported">Поддерживаемые браузеры</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_NotSupported">Не поддерживаемые браузеры</a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_Author">Автор</a></span></dt></dl></div><p>
 Имеется перевод этой страницы на <a class="link" href="MathJax4SVG-en.xhtml">английский</a> язык.
 </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Descriprion"/>Описание</h2></div></div></div><p>
-Скрипт <code class="filename">MathJax4SVG.js</code> обеспечивает поддержку для <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> в документах <acronym class="acronym">SVG</acronym>.
+Скрипт <code class="filename">MathJax4SVG.js</code> обеспечивает поддержку для <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> в документах <acronym class="acronym">SVG</acronym>.
 </p><p>
-В настоящее время <span class="application">MathJax</span> отображает
-<acronym class="acronym">MathML</acronym> лишь в документах <acronym class="acronym">(X)HTML</acronym>. Скрипт
-делает простой трюк: он заворачивает <acronym class="acronym">MathML</acronym> в
-<acronym class="acronym">XHTML</acronym> документ и вставляет элемент <code class="sgmltag-element">&lt;script&gt;</code>, ссылающийся на скрипт
-<span class="application">MathJax</span>, в раздел <code class="sgmltag-element">&lt;head&gt;</code> этого документа <acronym class="acronym">XHTML</acronym>.
+В настоящее время <span class="application">MathJax</span> отображает
+<acronym class="acronym">MathML</acronym> лишь в документах <acronym class="acronym">(X)HTML</acronym>. Скрипт
+делает простой трюк: он заворачивает <acronym class="acronym">MathML</acronym>
+в <acronym class="acronym">XHTML</acronym> документ и вставляет элемент <code class="sgmltag-element">&lt;script&gt;</code>, ссылающийся на скрипт
+<span class="application">MathJax</span>, в раздел <code class="sgmltag-element">&lt;head&gt;</code> этого документа <acronym class="acronym">XHTML</acronym>.
 </p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Download"/>Загрузка</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><a class="link" href="MathJax4SVG.js">Скрипт <code class="filename">MathJax4SVG.js</code></a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Usage"/>Использование</h2></div></div></div><p>
-Имеется несколько возможностей использовать <acronym class="acronym">SVG</acronym> в
-веб-страницах:
+Имеется несколько возможностей использовать <acronym class="acronym">SVG</acronym>
+в веб-страницах:
 
 </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
 Открыть <acronym class="acronym">SVG</acronym> документ как отдельный файл.
 </li><li class="listitem">
-Вставлять <acronym class="acronym">SVG</acronym> документы в <acronym class="acronym">(X)HTML</acronym> при
+Вставлять <acronym class="acronym">SVG</acronym> документы в <acronym class="acronym">(X)HTML</acronym> при
 помощи элементов <code class="sgmltag-element">&lt;object&gt;</code> или
 <code class="sgmltag-element">&lt;iframe&gt;</code>.
 </li><li class="listitem">
-Вставлять <acronym class="acronym">SVG</acronym> непосредственно в <acronym class="acronym">(X)HTML</acronym>.
+Вставлять <acronym class="acronym">SVG</acronym> непосредственно в <acronym class="acronym">(X)HTML</acronym>.
 </li><li class="listitem">
-Вставлять документы <acronym class="acronym">SVG</acronym> в <acronym class="acronym">(X)HTML</acronym> при
+Вставлять документы <acronym class="acronym">SVG</acronym> в <acronym class="acronym">(X)HTML</acronym> при
 помощи элементов <code class="sgmltag-element">&lt;img&gt;</code>.
 </li><li class="listitem">
-Ссылаться на документы <acronym class="acronym">SVG</acronym> в стилях <acronym class="acronym">CSS</acronym>
+Ссылаться на документы <acronym class="acronym">SVG</acronym> в стилях <acronym class="acronym">CSS</acronym>
 при помощи фраз <code class="code">url(…)</code>.
 </li></ul></div><p>
 
 Два последних способа исключают исполнение скриптов, и поэтому
-<span class="application">MathJax4SVG</span> в них неприменим.
+<span class="application">MathJax4SVG</span> в них неприменим.
 </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_WithinStandaloneSVG"/>Внутри отдельных документов <acronym class="acronym">SVG</acronym></h3></div></div></div><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/UsageWithinStandaloneSVG.svg"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
 <span class="hl-doctype">&lt;!DOCTYPE svg [
 &lt;!ENTITY it "&amp;#x2062;"&gt;
@@ -72,7 +72,7 @@
 	<span class="hl-tag">&lt;/foreignObject&gt;</span>
 <span class="hl-tag">&lt;/svg&gt;</span></pre><p>
 Обратите внимание, что все ссылки на сущности <acronym class="acronym">MathML</acronym> должны
-быть либо разрешены, либо объявлены в декларации типа документа.
+быть либо разрешены, либо объявлены в декларации типа документа.
 </p><p>
 Если атрибут <code class="sgmltag-attribute">width</code> или <code class="sgmltag-attribute">height</code> не указан, скрипт
 <code class="filename">MathJax4SVG.js</code> устанавливает ширину или высоту элемента
@@ -194,15 +194,15 @@
 	<span class="hl-tag">&lt;/body&gt;</span>
 <span class="hl-tag">&lt;/html&gt;</span></pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_LabelsPlacement"/>Размещение меток</h3></div></div></div><p>
 <span class="application">MathJax4SVG</span> способен размещать математические метки
-автоматически в изображениях <acronym class="acronym">SVG</acronym>, точно так же, как
+автоматически в изображениях <acronym class="acronym">SVG</acronym>, точно так же, как
 <span class="application">MetaPost</span> или <span class="application">Asymptote</span>.
-Для этого вводится несколько атрибутов в специальном пространстве имён <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>. Префикс
+Для этого вводится несколько атрибутов в специальном пространстве имён <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>. Префикс
 пространства имён, например <code class="sgmltag-attribute">mj4svg:</code>, должен быть
-связан с этим идентификатором.
+связан с этим идентификатором.
 
 </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="sgmltag-attribute">mj4svg:labelPlacement</code></span></dt><dd>
-Положение метки по отношению к якорной точке. Присутствие этого атрибута в
-элементе <code class="sgmltag-element">&lt;foreignObject&gt;</code> включает механизм
+Положение метки по отношению к якорной точке. Присутствие этого атрибута
+в элементе <code class="sgmltag-element">&lt;foreignObject&gt;</code> включает механизм
 автоматического размещения меток.  Все распознаваемые значения говорят сами за
 себя: <code class="sgmltag-attvalue">"center"</code>, <code class="sgmltag-attvalue">"right"</code>, <code class="sgmltag-attvalue">"upperRight"</code>, <code class="sgmltag-attvalue">"top"</code>, <code class="sgmltag-attvalue">"upperLeft"</code>, <code class="sgmltag-attvalue">"left"</code>, <code class="sgmltag-attvalue">"lowerLeft"</code>, <code class="sgmltag-attvalue">"bottom"</code>, <code class="sgmltag-attvalue">"lowerRight"</code>.
 </dd><dt><span class="term"><code class="sgmltag-attribute">mj4svg:labelX</code>, <code class="sgmltag-attribute">mj4svg:labelY</code></span></dt><dd>
@@ -256,8 +256,8 @@
 <span class="hl-tag">&lt;/svg&gt;</span></pre></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_SpecifyingMJURL"/>Альтернативный <acronym class="acronym">URL</acronym> <span class="application">MathJax</span></h3></div></div></div><p>
 По умолчанию <span class="application">MathJax4SVG</span> использует <code class="sgmltag-attvalue">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML"</code>
 как <span class="application">MathJax</span> <acronym class="acronym">URL</acronym>. Можно
-указать другой как значение атрибута <code class="sgmltag-attribute">mj4svg:mjURL</code> (в пространстве имён <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>). Атрибут
-задаётся в корневом элементе <acronym class="acronym">SVG</acronym>.
+указать другой как значение атрибута <code class="sgmltag-attribute">mj4svg:mjURL</code> (в пространстве имён <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>). Атрибут
+задаётся в корневом элементе <acronym class="acronym">SVG</acronym>.
 </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_BrowsersSupportStatus"/>Состояние поддержки браузеров</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_BrowsersSupportStatus_Supported"/>Поддерживаемые браузеры</h3></div></div></div><p>
 
 <span class="inlinemediaobject"><img src="MozillaFirefoxBrowser.png"/></span>
