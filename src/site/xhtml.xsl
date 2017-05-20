@@ -61,7 +61,7 @@
 		<link rel="shortcut icon" href="{$shortcut.icon}" type="image/png"/>
 		<link rel="author" href="https://plus.google.com/113215332542811715537?rel=author"/>
 		<!--link rel="copyright" href=""/-->
-		<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="application/ecmascript"><xsl:comment/></script>
+		<script async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_CHTML" type="application/ecmascript"><xsl:comment/></script>
 		<!--script src="MathJax4SVG.js" type="application/ecmascript"><xsl:comment/></script-->
 	</xsl:template>
 
