@@ -119,7 +119,9 @@ function processForeignObject(elForeignObject)
 				});
 			innerWindow.MathJax.Hub.queue.Push(function()
 				{
-					var elMathSpan=docIframeContentDocument.getElementsByClassName("math")[0];
+					//var elMathSpan=docIframeContentDocument.getElementsByClassName("math")[0];
+					var elMathSpan=docIframeContentDocument.getElementsByClassName("mjx-math")[0]
+							|| docIframeContentDocument.getElementsByClassName("math")[0];
 					var rectMathSpan=elMathSpan.getBoundingClientRect();
 					if(elForeignObject.getAttribute("width")==null)
 						elForeignObject.setAttribute("width", rectMathSpan.width+4);
