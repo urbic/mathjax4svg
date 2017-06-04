@@ -257,7 +257,7 @@ as a default <application>MathJax</application> <acronym>URL</acronym>. You can
 specify another one as the value of the <tag
 class="attribute">mj4svg:mjURL</tag> attribute (in <tag
 class="attvalue">"https://github.com/urbic/mathjax4svg"</tag> namespace). The
-attribute is placed at the <acronym>SVG</acronym> root element.
+attribute is placed at the <acronym>SVG</acronym> document element.
 </para>
 
 </section>
@@ -311,6 +311,12 @@ attribute is placed at the <acronym>SVG</acronym> root element.
 <inlinemediaobject>
 <imageobject>
 <imagedata fileref="OperaBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject alt="YaBrowser">
+<imageobject>
+<imagedata fileref="YaBrowser.png" format="PNG"/>
 </imageobject>
 </inlinemediaobject>
 

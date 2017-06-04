@@ -37,12 +37,14 @@ Document.prototype.getElementsByTagNameNS=function(namespaceURI, tagName)
 		return nl;
 	};
 
+/*
 if(Number.prototype.parseFloat==undefined)
-Number.prototype.parseFloat=function(x)
-	{
-		// Don't work in Konqueror
-		return new Float(x);
-	};
+	Number.prototype.parseFloat=function(x)
+		{
+			// Don't work in Konqueror
+			return new Float(x);
+		};
+*/
 
 function processSVGDocument(document)
 {

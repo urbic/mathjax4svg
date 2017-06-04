@@ -252,7 +252,7 @@ class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.j
 указать другой как значение атрибута <tag
 class="attribute">mj4svg:mjURL</tag> (в пространстве имён <tag
 class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>). Атрибут
-задаётся в корневом элементе <acronym>SVG</acronym>.
+задаётся в элементе документа <acronym>SVG</acronym>.
 </para>
 
 </section>
@@ -306,6 +306,12 @@ class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>). Атрибут
 <inlinemediaobject>
 <imageobject>
 <imagedata fileref="OperaBrowser.png" format="PNG"/>
+</imageobject>
+</inlinemediaobject>
+
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="YaBrowser.png" format="PNG"/>
 </imageobject>
 </inlinemediaobject>
 
