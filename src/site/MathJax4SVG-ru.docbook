@@ -247,7 +247,7 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 <para>
 По умолчанию <application>MathJax4SVG</application> использует <tag
-class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_CHTML"</tag>
+class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=MML_CHTML"</tag>
 как <application>MathJax</application> <acronym>URL</acronym>. Можно
 указать другой как значение атрибута <tag
 class="attribute">mj4svg:mjURL</tag> (в пространстве имён <tag
