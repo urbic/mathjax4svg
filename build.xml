@@ -20,6 +20,8 @@
 	<property name="sourceforge.user" value="concyclic"/>
 	<property name="deploy.site.address" value="${sourceforge.user},${project.name}@web.sourceforge.net:htdocs/"/>
 	<property name="deploy.dist.address" value="${sourceforge.user}@frs.sourceforge.net:/home/frs/project/${project.name}/"/>
+	<property name="mathjax.version" value="2.7.4"/>
+	<property name="mathjax.url" value="https://cdnjs.cloudflare.com/ajax/libs/mathjax/${mathjax.version}/MathJax.js?config=MML_CHTML"/>
 
 	<presetdef name="xslt.preset">
 		<xslt
@@ -31,8 +33,10 @@
 			<factory name="com.icl.saxon.TransformerFactoryImpl"/>
 			<xmlcatalog>
 				<catalogpath>
-					<pathelement location="${site.sources.dir}/xmlcatalog"/>
+					<pathelement location="/etc/xml/docbook5-xsl-stylesheets.xml"/>
+					<pathelement location="/etc/xml/mathml.xml"/>
 				</catalogpath>
+				<dtd publicId="generated" location="${build.dir}/generated.ent"/>
 			</xmlcatalog>
 			<classpath>
 				<pathelement location="${java.home.dir}/saxon6.jar"/>
@@ -79,10 +83,19 @@
 	
 	<target name="site" description="Make site" depends="site.build.dir,css">
 		<symlink resource="${site.sources.dir}/examples" link="examples" overwrite="true"/>
+		<echo file="${build.dir}/generated.ent">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!ENTITY mathjax.url "${mathjax.url}"&gt;</echo>
 		<xslt.lang lang="en"/>
 		<xslt.lang lang="ru"/>
 		<copy todir="${site.build.dir}">
-			<fileset dir="${site.sources.dir}" includes="*.png *.svg *.jpeg *.gif *.js"/>
+			<fileset dir="${site.sources.dir}" includes="*.js"/>
+			<filterset>
+                <propertyset>
+                    <propertyref name="mathjax.url"/>
+                </propertyset>
+            </filterset>
+		</copy>
+		<copy todir="${site.build.dir}">
+			<fileset dir="${site.sources.dir}" includes="*.png *.svg *.jpeg *.gif"/>
 			<fileset dir="${site.sources.dir}" includes="examples/**" excludes="**/.htaccess"/>
 			<fileset dir="${site.sources.dir}" includes="files/**" excludes="**/.htaccess"/>
 			<fileset dir="${site.sources.dir}" includes="*.app/**"/>
@@ -91,9 +104,19 @@
 		</copy>
 		<copy todir="${site.build.dir}">
 			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
+			<filterset>
+                <propertyset>
+                    <propertyref name="mathjax.url"/>
+                </propertyset>
+            </filterset>
 		</copy>
 		<copy todir="${site.build.dir}/examples">
 			<fileset dir="${sources.dir}" includes="${project.title.name}.js"/>
+			<filterset>
+                <propertyset>
+                    <propertyref name="mathjax.url"/>
+                </propertyset>
+            </filterset>
 		</copy>
 		<symlink link="examples" action="delete"/>
 	</target>
@@ -168,18 +191,8 @@
 		</exec>
 	</target>
 
-	<target name="deploy.dist" description="Publish site pages" depends="dist">
-		<echo message="Deploy to SourceForge (${deploy.dist.address})"/>
-		<exec dir="." executable="rsync" os="Linux" failonerror="true">
-			<arg value="-Cativz" />
-			<arg value="${dist.build.dir}/"/>
-			<arg value="${deploy.dist.address}/"/>
-		</exec> 
-	</target>
-
-	<target name="gh-pages">
-	</target>
-
 	<target name="deploy" description="Deploy all stuff" depends="deploy.dist,deploy.site"/>
+
+	<target name="deploy.dist"/>
 
 </project>

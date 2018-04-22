@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article [
-
-<!ENTITY % ent.files	SYSTEM "namespaces.ent">
-%ent.files;
+<!ENTITY % namespaces	SYSTEM "namespaces.ent">
+%namespaces;
+<!ENTITY % generated	PUBLIC "generated" "generated.ent">
+%generated;
 ]>
 <article
 	xml:id="MathJax4SVG"
@@ -247,12 +248,11 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 <para>
 По умолчанию <application>MathJax4SVG</application> использует <tag
-class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=MML_CHTML"</tag>
-как <application>MathJax</application> <acronym>URL</acronym>. Можно
-указать другой как значение атрибута <tag
-class="attribute">mj4svg:mjURL</tag> (в пространстве имён <tag
-class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>). Атрибут
-задаётся в элементе документа <acronym>SVG</acronym>.
+class="attvalue">"&mathjax.url;"</tag> как <application>MathJax</application>
+<acronym>URL</acronym>. Можно указать другой <acronym>URL</acronym> как
+значение атрибута <tag class="attribute">mj4svg:mjURL</tag> (в пространстве
+имён <tag class="attvalue">"https://github.com/urbic/mathjax4svg"</tag>).
+Атрибут задаётся в элементе документа <acronym>SVG</acronym>.
 </para>
 
 </section>

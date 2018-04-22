@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article [
-
-<!ENTITY % ent.files	SYSTEM "namespaces.ent">
-%ent.files;
+<!ENTITY % namespaces	SYSTEM "namespaces.ent">
+%namespaces;
+<!ENTITY % generated	PUBLIC "generated" "generated.ent">
+%generated;
 ]>
 <article
 	xml:id="MathJax4SVG"
@@ -252,10 +253,10 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 <para>
 <application>MathJax4SVG</application> use <tag
-class="attvalue">"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=MML_CHTML"</tag>
-as a default <application>MathJax</application> <acronym>URL</acronym>. You can
-specify another one as the value of the <tag
-class="attribute">mj4svg:mjURL</tag> attribute (in <tag
+class="attvalue">"&mathjax.url;"</tag> as a default
+<application>MathJax</application> <acronym>URL</acronym>. You can specify
+another one as the value of the <tag class="attribute">mj4svg:mjURL</tag>
+attribute (in <tag
 class="attvalue">"https://github.com/urbic/mathjax4svg"</tag> namespace). The
 attribute is placed at the <acronym>SVG</acronym> document element.
 </para>
