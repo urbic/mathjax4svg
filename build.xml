@@ -17,8 +17,8 @@
 	<property name="src.site" location="${src}/site"/>
 	<property name="xslt.html.stylesheet" value="${project.title.name}.css"/>
 	<property name="xslt.highlight.xslthl.config" location="${src.site}/xslthl/highlighters/xslthl-config.xml"/>
-	<property name="mathjax.version" value="2.7.4"/>
-	<property name="mathjax.url" value="https://cdnjs.cloudflare.com/ajax/libs/mathjax/${mathjax.version}/MathJax.js?config=MML_CHTML"/>
+	<property name="polyfill.url" value="https://polyfill.io/v3/polyfill.min.js?features=es6"/>
+	<property name="mathjax.url" value="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"/>
 
 	<presetdef name="xslt.preset">
 		<xslt
@@ -37,6 +37,7 @@
 			</xmlcatalog>
 			<classpath>
 				<pathelement location="${javadir}/saxon6.jar"/>
+				<pathelement location="${javadir}/saxon-6.5.5.jar"/><!-- For Debian -->
 				<pathelement location="${javadir}/xml-commons-resolver.jar"/>
 				<pathelement location="${javadir}/docbook-xsl-saxon.jar"/>
 				<pathelement location="${javadir}/xslthl.jar"/>
@@ -55,6 +56,8 @@
 			<param name="draft.mode" expression="'maybe'"/>
 			<param name="use.webcounters" expression="${xslt.use.webcounters}"/>
 			<param name="highlight.xslthl.config" expression="file://${xslt.highlight.xslthl.config}"/>
+			<param name="polyfill.url" expression="${polyfill.url}"/>
+			<param name="mathjax.url" expression="${mathjax.url}"/>
 		</xslt>
 	</presetdef>
 
@@ -76,7 +79,11 @@
 	
 	<target name="site" description="Make site" depends="css">
 		<mkdir dir="${target.site}"/>
-		<symlink resource="${src.site}/examples" link="examples" overwrite="true"/>
+		<symlink
+			resource="${src.site}/examples"
+			link="examples"
+			overwrite="true"
+			/>
 		<echo file="${target}/generated.ent">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!ENTITY mathjax.url "${mathjax.url}"&gt;</echo>
 		<xslt.lang lang="en"/>
 		<xslt.lang lang="ru"/>
@@ -84,33 +91,24 @@
 			<fileset dir="${src.js}" includes="*.js"/>
 			<filterset>
                 <propertyset>
+                    <propertyref name="polyfill.url"/>
                     <propertyref name="mathjax.url"/>
                 </propertyset>
             </filterset>
 		</copy>
 		<copy todir="${target.site}">
+			<fileset dir="${src.site}" includes="LICENSE"/>
 			<fileset dir="${src.site}" includes="*.png *.svg *.jpeg *.gif"/>
 			<fileset dir="${src.site}" includes="examples/**" excludes="**/.htaccess"/>
 			<fileset dir="${src.site}" includes="files/**" excludes="**/.htaccess"/>
 			<fileset dir="${src.site}" includes="icons/**"/>
 			<fileset dir="${src.site}" includes="js/**"/>
 		</copy>
-		<copy todir="${target.site}">
-			<fileset dir="${src}" includes="${project.name}.js"/>
-			<filterset>
-                <propertyset>
-                    <propertyref name="mathjax.url"/>
-                </propertyset>
-            </filterset>
-		</copy>
-		<copy todir="${target.site}/examples">
-			<fileset dir="${src.js}" includes="${project.name}.js"/>
-			<filterset>
-                <propertyset>
-                    <propertyref name="mathjax.url"/>
-                </propertyset>
-            </filterset>
-		</copy>
+		<symlink
+			resource="../${ant.project.name}.js"
+			link="${target.site}/examples/${ant.project.name}.js"
+			overwrite="true"
+			/>
 		<symlink link="examples" action="delete"/>
 	</target>
 

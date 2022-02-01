@@ -47,6 +47,8 @@
 	<xsl:param name="docbook.css.source"/>
 	<xsl:param name="table.borders.with.css" select="0"/>
 	<xsl:param name="callout.unicode.font" select="'STIX General'"/>
+	<xsl:param name="polyfill.url"/>
+	<xsl:param name="mathjax.url"/>
 
 	<xsl:output method="xml" omit-xml-declaration="yes"/>
 	
@@ -58,9 +60,9 @@
 
 	<xsl:template name="user.head.content">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="shortcut icon" href="{$shortcut.icon}" type="image/png"/>
-		<!--link rel="copyright" href=""/-->
-		<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=MML_CHTML" type="application/ecmascript"><xsl:comment/></script>
+		<link rel="license" href="LICENSE" type="text/plain"/>
+		<script src="$polyfill.url" type="application/ecmascript"><xsl:comment/></script>
+		<script async="async" src="$mathjax.url" type="application/ecmascript"><xsl:comment/></script>
 	</xsl:template>
 
 	<xsl:template name="is.graphic.format">

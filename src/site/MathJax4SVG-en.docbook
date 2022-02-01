@@ -39,7 +39,7 @@ The <filename>mathjax4svg.js</filename> script provides support for
 
 <para>
 Currently <application>MathJax</application> renders <acronym>MathML</acronym>
-stuff only in <acronym>(X)HTML</acronym> documents. Script does a simple trick:
+stuff only in <acronym>(X)HTML</acronym> documents. Script does a simple trick:
 it envelops <acronym>MathML</acronym> into <acronym>XHTML</acronym> document
 and injects <tag class="element">&lt;script&gt;</tag> element pointing to
 <application>MathJax</application> script into <acronym>XHTML</acronym> <tag
@@ -61,7 +61,7 @@ class="element">&lt;head&gt;</tag> section.
 
 <itemizedlist>
 <listitem>
-<link xlink:href="mathjax4svg.js"><filename>mathjax4svg.js</filename>
+<link xlink:href="mathjax4svg.js">The <filename>mathjax4svg.js</filename>
 script</link>
 </listitem>
 <listitem>
@@ -99,8 +99,8 @@ Use <acronym>SVG</acronym> documents included in <acronym>(X)HTML</acronym> via
 </listitem>
 
 <listitem>
-Use <acronym>SVG</acronym> documents referenced by <code>url(…)</code> clause
-in <acronym>CSS</acronym> stylesheet.
+Use <acronym>SVG</acronym> documents referenced by the <code>url(…)</code>
+clause in <acronym>CSS</acronym> stylesheet.
 </listitem>
 
 </itemizedlist>
@@ -246,7 +246,7 @@ fileref="examples/UsageLabelsPlacement.svg"/></textobject></programlisting>
 
 <para>
 <application>MathJax4SVG</application> use <tag
-class="attvalue">"&mathjax.url;"</tag> as a default
+class="attvalue">"&mathjax.url;"</tag> as a default
 <application>MathJax</application> <acronym>URL</acronym>. You can specify
 another one as the value of the <tag class="attribute">mj4svg:mjURL</tag>
 attribute (in <tag
