@@ -59,17 +59,9 @@
 	<xsl:template name="user.head.content">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="shortcut icon" href="{$shortcut.icon}" type="image/png"/>
-		<link rel="author" href="https://plus.google.com/113215332542811715537?rel=author"/>
 		<!--link rel="copyright" href=""/-->
 		<script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=MML_CHTML" type="application/ecmascript"><xsl:comment/></script>
-		<!--script src="MathJax4SVG.js" type="application/ecmascript"><xsl:comment/></script-->
 	</xsl:template>
-
-	<!--xsl:template name="user.footer.navigation">
-		<a href="https://github.com/urbic/mathjax4svg"><img
-			src="GitHub-Mark-32px.png"
-			alt="GitHub Logo"/></a>
-	</xsl:template-->
 
 	<xsl:template name="is.graphic.format">
 		<xsl:param name="format"/>

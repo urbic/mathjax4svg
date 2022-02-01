@@ -9,7 +9,7 @@
 	height="200"
 	>
 	<defs>
-		<script xlink:href="MathJax4SVG.js" type="application/ecmascript"/>
+		<script xlink:href="mathjax4svg.js" type="application/ecmascript"/>
 	</defs>
 	<rect x="50" y="50" width="100" height="100" fill="seagreen" stroke="darkslategray" stroke-width="2"/>
 	<foreignObject mj4svg:labelX="50" mj4svg:labelY="100" mj4svg:labelPlacement="left">

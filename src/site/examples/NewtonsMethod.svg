@@ -9,7 +9,7 @@
 	height="300.4"
 	>
 	<defs>
-		<script xlink:href="MathJax4SVG.js" type="application/ecmascript"/>
+		<script xlink:href="mathjax4svg.js" type="application/ecmascript"/>
 	</defs>
 	<title>Newton’s Method</title>
 	<defs>

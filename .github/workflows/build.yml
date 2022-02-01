@@ -1,0 +1,24 @@
+name: CI
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install dependencies
+              run: sudo apt-get install ant docbook-xsl-ns docbook-mathml docbook-xsl-saxon libxslthl-java sassc
+            - name: Build
+              run: ant -v -noinput
+            - name: Deploy site
+              uses: JamesIves/github-pages-deploy-action@3.6.2
+              with:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  BRANCH: gh-pages
+                  FOLDER: target/site

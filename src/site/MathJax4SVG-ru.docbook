@@ -33,7 +33,7 @@ xlink:href="MathJax4SVG-en.xhtml">английский</link> язык.
 <title>Описание</title>
 
 <para>
-Скрипт <filename>MathJax4SVG.js</filename> обеспечивает поддержку для <application
+Скрипт <filename>mathjax4svg.js</filename> обеспечивает поддержку для <application
 xlink:href="http://mathjax.org">MathJax</application> в документах <acronym>SVG</acronym>.
 </para>
 
@@ -62,7 +62,7 @@ class="element">&lt;head&gt;</tag> этого документа <acronym>XHTML<
 
 <itemizedlist>
 <listitem>
-<link xlink:href="MathJax4SVG.js">Скрипт <filename>MathJax4SVG.js</filename></link>
+<link xlink:href="mathjax4svg.js">Скрипт <filename>mathjax4svg.js</filename></link>
 </listitem>
 <listitem>
 <link xlink:href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</link>
@@ -132,7 +132,7 @@ fileref="examples/UsageWithinStandaloneSVG.svg"/></textobject></programlisting>
 <para>
 Если атрибут <tag class="attribute">width</tag> или <tag
 class="attribute">height</tag> не указан, скрипт
-<filename>MathJax4SVG.js</filename> устанавливает ширину или высоту элемента
+<filename>mathjax4svg.js</filename> устанавливает ширину или высоту элемента
 <tag class="element">&lt;foreignObject&gt;</tag> автоматически.
 </para>
 

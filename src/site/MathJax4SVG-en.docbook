@@ -32,9 +32,9 @@ This page is also available in <link xlink:href="MathJax4SVG-ru.xhtml">Russian</
 <title>Description</title>
 
 <para>
-<filename>MathJax4SVG.js</filename> script provides support for <application
-xlink:href="http://mathjax.org">MathJax</application> in <acronym>SVG</acronym>
-documents.
+The <filename>mathjax4svg.js</filename> script provides support for
+<application xlink:href="http://mathjax.org">MathJax</application> in
+<acronym>SVG</acronym> documents.
 </para>
 
 <para>
@@ -61,7 +61,7 @@ class="element">&lt;head&gt;</tag> section.
 
 <itemizedlist>
 <listitem>
-<link xlink:href="MathJax4SVG.js"><filename>MathJax4SVG.js</filename>
+<link xlink:href="mathjax4svg.js"><filename>mathjax4svg.js</filename>
 script</link>
 </listitem>
 <listitem>
@@ -69,13 +69,6 @@ script</link>
 page</link>
 </listitem>
 </itemizedlist>
-
-<!--para>
-The latest version of <application>MathJax4SVG</application> script can be
-<link
-xlink:href="http://sourceforge.net/projects/mathjax4svg/files/latest/download?source=files">downloaded</link>
-from SourceForge.
-</para-->
 
 </section>
 
@@ -138,7 +131,7 @@ resolved or declared in document type declaration.
 <para>
 If <tag class="attribute">width</tag> or <tag
 class="attribute">height</tag> attribute not specified,
-<filename>MathJax4SVG.js</filename> script set the width and the height of <tag
+<filename>mathjax4svg.js</filename> script set the width and the height of <tag
 class="element">&lt;foreignObject&gt;</tag> automatically.
 </para>
 
