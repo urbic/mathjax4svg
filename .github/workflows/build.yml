@@ -13,7 +13,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Install dependencies
-              run: sudo apt-get install ant docbook-xsl-ns docbook-mathml docbook-xsl-saxon libxslthl-java sassc
+              run: sudo apt-get install ant ant-optional libxerces2-java docbook-xsl-ns docbook-mathml docbook-xsl-saxon libxslthl-java sassc
             - name: Build
               run: ant -v -noinput -Ddocbook.catalog=/etc/docbook5-xsl-stylesheets.xml -Dmathml.catalog=/etc/xml/mathml.xml -Dsaxon6.jar=/usr/share/java/saxon-6.5.5.jar
             - name: Deploy site

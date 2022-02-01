@@ -11,7 +11,7 @@ The mathJax4svg.js script provides support for
 ## Features
 * MathJax support in standalone SVG documents and included within (X)HTML either directly or via objects
 * Automatical math labels placement
-* Support majority of modern browsers: Firefox, Seamonkey, Chrome, Chromium, Konqueror, Safari, Opera
+* Support majority of modern browsers: Firefox, Chrome, Opera, YaBrowser
 
 ## GitHub pages
 * [English](https://urbic.github.io/mathjax4svg/MathJax4SVG-en.xhtml)
