@@ -5,9 +5,8 @@ const NS_XHTML="http://www.w3.org/1999/xhtml";
 const NS_MATHML="http://www.w3.org/1998/Math/MathML";
 const NS_SVG="http://www.w3.org/2000/svg";
 const NS_MATHJAX4SVG="https://github.com/urbic/mathjax4svg";
-// const MATHJAX_URL="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML";
-// see https://www.mathjax.org/cdn-shutting-down/
-const MATHJAX_URL="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=MML_CHTML";
+const POLYFILL_URL="https://polyfill.io/v3/polyfill.min.js?features=es6";
+const MATHJAX_URL="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js";
 const SQRT2=Math.sqrt(2);
 const DEFAULT_LABEL_OFFSET=".3em";
 
@@ -99,6 +98,10 @@ function processForeignObject(elForeignObject)
 			innerWindow.setTimeout(function()
 				{
 					if(docIframeContentDocument.head.firstElementChild) return;
+					var elPolyfillScript=docIframeContentDocument.createElementNS(NS_XHTML, "script");
+					elPolyfillScript.src=POLYFILL_URL;
+					elPolyfillScript.type="application/ecmascript";
+					docIframeContentDocument.head.appendChild(elPolyfillScript);
 					var elMathJaxScript=docIframeContentDocument.createElementNS(NS_XHTML, "script");
 					elMathJaxScript.src=mjURL;
 					elMathJaxScript.async=true;
@@ -116,13 +119,9 @@ function processForeignObject(elForeignObject)
 			docIframeContentDocument.body.style.margin="2";
 			docIframeContentDocument.body.appendChild(docIframeContentDocument.adoptNode(elMath));
 			
-			innerWindow.MathJax.Hub.Config({
-					"HTML-CSS": {showMathMenu: false}
-				});
-			innerWindow.MathJax.Hub.queue.Push(function()
+			innerWindow.MathJax.typesetPromise().then(()=>
 				{
-					//var elMathSpan=docIframeContentDocument.getElementsByClassName("math")[0];
-					var elMathSpan=docIframeContentDocument.getElementsByClassName("mjx-math")[0]
+					var elMathSpan=docIframeContentDocument.getElementsByTagName("mjx-math")[0]
 							|| docIframeContentDocument.getElementsByClassName("math")[0];
 					var rectMathSpan=elMathSpan.getBoundingClientRect();
 					if(elForeignObject.getAttribute("width")==null)
@@ -193,7 +192,7 @@ function processForeignObject(elForeignObject)
 						elForeignObject.setAttribute("x", labelLeft);
 						elForeignObject.setAttribute("y", labelTop);
 					}
-				});
+				}).catch((err)=>console.log(err.message));
 		};
 	setupMathJax();
 }
