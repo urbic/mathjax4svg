@@ -13,6 +13,6 @@ The mathJax4svg.js script provides support for
 * Support majority of modern browsers: Firefox, Seamonkey, Chrome, Chromium, Konqueror, Safari, Opera
 
 ## GitHub pages
-* [English](http://urbic.github.io/mathjax4svg/MathJax4SVG-en.xhtml)
-* [Russian](http://urbic.github.io/mathjax4svg/MathJax4SVG-ru.xhtml)
+* [English](https://urbic.github.io/mathjax4svg/MathJax4SVG-en.xhtml)
+* [Russian](https://urbic.github.io/mathjax4svg/MathJax4SVG-ru.xhtml)
 

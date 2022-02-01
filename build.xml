@@ -98,11 +98,8 @@
 		</copy>
 		<copy todir="${target.site}">
 			<fileset dir="${src.site}" includes="LICENSE"/>
-			<fileset dir="${src.site}" includes="*.png *.svg *.jpeg *.gif"/>
-			<fileset dir="${src.site}" includes="examples/**" excludes="**/.htaccess"/>
-			<fileset dir="${src.site}" includes="files/**" excludes="**/.htaccess"/>
-			<fileset dir="${src.site}" includes="icons/**"/>
-			<fileset dir="${src.site}" includes="js/**"/>
+			<fileset dir="${src.site}" includes="*.png"/>
+			<fileset dir="${src.site}" includes="examples/**"/>
 		</copy>
 		<symlink
 			resource="../${ant.project.name}.js"
