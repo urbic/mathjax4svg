@@ -3,9 +3,9 @@
   PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru"><head><title>MathJax для SVG</title><link rel="stylesheet" type="text/css" href="MathJax4SVG.css"/><link rev="made" href="${xslt.link.mailto.url}"/><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"/><meta name="keywords" content="MathJax, SVG"/><link rel="home" href="#MathJax4SVG" title="MathJax для SVG"/><link rel="next" href="#MathJax4SVG_Descriprion" title="Описание"/><link rel="article" href="#MathJax4SVG" title="MathJax для SVG"/><link rel="section" href="#MathJax4SVG_Descriprion" title="Описание"/><link rel="section" href="#MathJax4SVG_Download" title="Загрузка"/><link rel="section" href="#MathJax4SVG_Usage" title="Использование"/><link rel="section" href="#MathJax4SVG_BrowsersSupportStatus" title="Состояние поддержки браузеров"/><link rel="section" href="#MathJax4SVG_Author" title="Автор"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="license" href="LICENSE" type="text/plain"/><script src="$polyfill.url" type="application/ecmascript"><!----></script><script async="async" src="$mathjax.url" type="application/ecmascript"><!----></script></head><body><div xml:lang="ru" class="article"><div class="titlepage"><div><div><h1 class="title"><a id="MathJax4SVG"/>MathJax для SVG</h1></div></div><hr/></div><div class="toc"><div class="toc-title">Содержание</div><dl class="toc"><dt><span class="section"><a href="#MathJax4SVG_Descriprion">Описание</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Download">Загрузка</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage">Использование</a></span></dt><dd><dl><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinStandaloneSVG">Внутри отдельных документов <acronym class="acronym">SVG</acronym></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinXHTMLObjects">Внутри документов <acronym class="acronym">(X)HTML</acronym>, включающих
 <acronym class="acronym">SVG</acronym> через элементы <code class="sgmltag-element">&lt;object&gt;</code></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_WithinXHTMLDirect">Внутри документов <acronym class="acronym">(X)HTML</acronym>, непосредственно включающих
-<acronym class="acronym">SVG</acronym></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_LabelsPlacement">Размещение меток</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_SpecifyingMJURL">Альтернативный <acronym class="acronym">URL</acronym> <span class="application">MathJax</span></a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus">Состояние поддержки браузеров</a></span></dt><dd><dl><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_Supported">Поддерживаемые браузеры</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus_NotSupported">Не поддерживаемые браузеры</a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_Author">Автор</a></span></dt></dl></div><p>
+<acronym class="acronym">SVG</acronym></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_LabelsPlacement">Размещение меток</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_SpecifyingMJURL">Альтернативный <acronym class="acronym">URL</acronym> <span class="application">MathJax</span></a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus">Состояние поддержки браузеров</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Author">Автор</a></span></dt></dl></div><p>
 Имеется перевод этой страницы на <a class="link" href="MathJax4SVG-en.xhtml">английский</a> язык.
-</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Descriprion"/>Описание</h2></div></div></div><p>
+</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Descriprion"/>Описание</h2></div></div></div><p>
 Скрипт <code class="filename">mathjax4svg.js</code> обеспечивает поддержку для <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> в документах <acronym class="acronym">SVG</acronym>.
 </p><p>
 В настоящее время <span class="application">MathJax</span> отображает
@@ -13,11 +13,11 @@
 делает простой трюк: он заворачивает <acronym class="acronym">MathML</acronym>
 в <acronym class="acronym">XHTML</acronym> документ и вставляет элемент <code class="sgmltag-element">&lt;script&gt;</code>, ссылающийся на скрипт
 <span class="application">MathJax</span>, в раздел <code class="sgmltag-element">&lt;head&gt;</code> этого документа <acronym class="acronym">XHTML</acronym>.
-</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Download"/>Загрузка</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><a class="link" href="mathjax4svg.js">Скрипт <code class="filename">mathjax4svg.js</code></a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Usage"/>Использование</h2></div></div></div><p>
+</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Download"/>Загрузка</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><a class="link" href="mathjax4svg.js">Скрипт <code class="filename">mathjax4svg.js</code></a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Usage"/>Использование</h2></div></div></div><p>
 Имеется несколько возможностей использовать <acronym class="acronym">SVG</acronym>
 в веб-страницах:
 
-</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
 Открыть <acronym class="acronym">SVG</acronym> документ как отдельный файл.
 </li><li class="listitem">
 Вставлять <acronym class="acronym">SVG</acronym> документы в <acronym class="acronym">(X)HTML</acronym> при
@@ -264,28 +264,20 @@
 значение атрибута <code class="sgmltag-attribute">mj4svg:mjURL</code> (в пространстве
 имён <code class="sgmltag-attvalue">"https://github.com/urbic/mathjax4svg"</code>).
 Атрибут задаётся в элементе документа <acronym class="acronym">SVG</acronym>.
-</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_BrowsersSupportStatus"/>Состояние поддержки браузеров</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_BrowsersSupportStatus_Supported"/>Поддерживаемые браузеры</h3></div></div></div><p>
-
-<span class="inlinemediaobject"><img src="MozillaFirefoxBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="SeaMonkeyBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="ChromeBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="ChromiumBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="KonquerorBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="AppleSafariBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="OperaBrowser.png"/></span>
-
-<span class="inlinemediaobject"><img src="YaBrowser.png"/></span>
-
-</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_BrowsersSupportStatus_NotSupported"/>Не поддерживаемые браузеры</h3></div></div></div><p>
-
-<span class="inlinemediaobject"><img src="InternetExplorerBrowser.png"/></span>
-
-</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="MathJax4SVG_Author"/>Автор</h2></div></div></div><p>
+</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_BrowsersSupportStatus"/>Состояние поддержки браузеров</h2></div></div></div><p>
+</p><div class="informaltable"><table class="informaltable" style="border-collapse: collapse;"><colgroup><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="MozillaFirefoxBrowser.svg"/></span>
+</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="ChromeBrowser.svg"/></span>
+</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="OperaBrowser.svg"/></span>
+</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="YaBrowser.svg"/></span>
+</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="EdgeBrowser.svg"/></span>
+</td><td style="border-bottom: 1px solid ; ">
+<span class="inlinemediaobject"><object type="image/svg+xml" data="SafariBrowser.svg"/></span>
+</td></tr><tr><td style="border-right: 1px solid ; ">✓</td><td style="border-right: 1px solid ; ">✓</td><td style="border-right: 1px solid ; ">✓</td><td style="border-right: 1px solid ; ">✓</td><td style="border-right: 1px solid ; ">?</td><td style="">?</td></tr></tbody></table></div><p>
+</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Author"/>Автор</h2></div></div></div><p>
 Антон Швец
 </p></div></div></body></html>

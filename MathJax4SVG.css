@@ -47,3 +47,7 @@ hr { border: solid #3a5757 1px; }
 .toc-title, .example-title, .figure-title { font-weight: bold; font-size: small; }
 
 .application { font-style: italic; }
+
+.informaltable td { border: none !important; border-right: none; width: 48px; text-align: center; font-size: large; }
+
+.inlinemediaobject object { height: 32px; }
