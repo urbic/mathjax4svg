@@ -44,7 +44,7 @@
 	<xsl:param name="keep.relative.image.uris" select="1"/>
 	<xsl:param name="make.clean.html" select="1"/>
 	<xsl:param name="docbook.css.source"/>
-	<!--xsl:param name="table.borders.with.css" select="1"/-->
+	<xsl:param name="table.borders.with.css" select="1"/>
 	<xsl:param name="callout.unicode.font" select="'STIX General'"/>
 	<xsl:param name="polyfill.url"/>
 	<xsl:param name="mathjax.url"/>
@@ -60,8 +60,8 @@
 	<xsl:template name="user.head.content">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="license" href="LICENSE" type="text/plain"/>
-		<script src="$polyfill.url" type="application/ecmascript"><xsl:comment/></script>
-		<script async="async" src="$mathjax.url" type="application/ecmascript"><xsl:comment/></script>
+		<script src="{$polyfill.url}" type="application/ecmascript"><xsl:comment/></script>
+		<script async="async" src="{$mathjax.url}" type="application/ecmascript"><xsl:comment/></script>
 	</xsl:template>
 
 	<xsl:template name="is.graphic.format">
