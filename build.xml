@@ -15,6 +15,11 @@
 	<property name="src" location="src"/>
 	<property name="src.js" location="${src}/js"/>
 	<property name="src.site" location="${src}/site"/>
+	<property name="sysconfdir" location="/etc"/>
+	<property name="xml.catalog" location="${sysconfdir}/xml/catalog"/>
+	<property name="docbook.catalog" location="${sysconfdir}/xml/docbook5-xsl-stylesheets.xml"/>
+	<property name="mathml.catalog" location="${sysconfdir}/xml/mathml.xml"/>
+	<property name="saxon6.jar" location="${javadir}/saxon6.jar"/>
 	<property name="xslt.html.stylesheet" value="${project.title.name}.css"/>
 	<property name="xslt.highlight.xslthl.config" location="${src.site}/xslthl/highlighters/xslthl-config.xml"/>
 	<property name="polyfill.url" value="https://polyfill.io/v3/polyfill.min.js?features=es6"/>
@@ -30,14 +35,14 @@
 			<factory name="com.icl.saxon.TransformerFactoryImpl"/>
 			<xmlcatalog>
 				<catalogpath>
-					<pathelement location="/etc/xml/docbook5-xsl-stylesheets.xml"/>
-					<pathelement location="/etc/xml/mathml.xml"/>
+					<pathelement location="${xml.catalog}"/>
+					<pathelement location="${docbook.catalog}"/>
+					<pathelement location="${mathml.catalog}"/>
 				</catalogpath>
 				<dtd publicId="generated" location="${target}/generated.ent"/>
 			</xmlcatalog>
 			<classpath>
-				<pathelement location="${javadir}/saxon6.jar"/>
-				<pathelement location="${javadir}/saxon-6.5.5.jar"/><!-- For Debian -->
+				<pathelement location="${saxon6.jar}"/>
 				<pathelement location="${javadir}/xml-commons-resolver.jar"/>
 				<pathelement location="${javadir}/docbook-xsl-saxon.jar"/>
 				<pathelement location="${javadir}/xslthl.jar"/>
@@ -97,8 +102,8 @@
             </filterset>
 		</copy>
 		<copy todir="${target.site}">
-			<fileset dir="${src.site}" includes="LICENSE"/>
-			<fileset dir="${src.site}" includes="*.png"/>
+			<fileset file="LICENSE"/>
+			<fileset dir="${src.site}" includes="*.png *.svg"/>
 			<fileset dir="${src.site}" includes="examples/**"/>
 		</copy>
 		<symlink

@@ -26,7 +26,6 @@
 	<xsl:param name="admon.style"/>
 	<xsl:param name="textinsert.extension" select="1"/>
 	<xsl:param name="use.id.as.filename" select="1"/>
-	<xsl:param name="index.method">kosek</xsl:param>
 	<xsl:param name="use.svg" select="1"/>
 	<xsl:param name="variablelist.term.break.after" select="1"/>
 	<xsl:param name="index.on.type" select="1"/>
@@ -34,7 +33,7 @@
 	<xsl:param name="make.graphic.viewport" select="1"/>
 	<xsl:param name="highlight.source" select="1"/>
 	<xsl:param name="variablelist.term.separator"/>
-	<xsl:param name="css.decoration">1</xsl:param>
+	<xsl:param name="css.decoration" select="0"/>
 	<xsl:param name="graphicsize.extension" select="0"/>
 	<xsl:param name="graphicsize.use.img.src.path" select="1"/>
 	<xsl:param name="make.year.ranges" select="1"/>
@@ -45,7 +44,7 @@
 	<xsl:param name="keep.relative.image.uris" select="1"/>
 	<xsl:param name="make.clean.html" select="1"/>
 	<xsl:param name="docbook.css.source"/>
-	<xsl:param name="table.borders.with.css" select="0"/>
+	<!--xsl:param name="table.borders.with.css" select="1"/-->
 	<xsl:param name="callout.unicode.font" select="'STIX General'"/>
 	<xsl:param name="polyfill.url"/>
 	<xsl:param name="mathjax.url"/>

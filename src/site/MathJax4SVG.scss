@@ -113,3 +113,17 @@ hr
 {
 	font-style: italic;
 }
+
+.informaltable td
+{
+	border: none !important;
+	border-right: none;
+	width: 48px;
+	text-align: center;
+	font-size: large;
+}
+
+.inlinemediaobject object
+{
+	height: 32px;
+}

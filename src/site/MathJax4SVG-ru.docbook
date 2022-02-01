@@ -262,77 +262,66 @@ class="attvalue">"&mathjax.url;"</tag> как <application>MathJax</application>
 <section xml:id="MathJax4SVG_BrowsersSupportStatus">
 <title>Состояние поддержки браузеров</title>
 
-<section xml:id="MathJax4SVG_BrowsersSupportStatus_Supported">
-<title>Поддерживаемые браузеры</title>
-
 <para>
-
+<informaltable frame="0">
+<tgroup cols="6">
+<tbody>
+<row>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="MozillaFirefoxBrowser.png" format="PNG"/>
+<imagedata fileref="MozillaFirefoxBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
+</entry>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="SeaMonkeyBrowser.png" format="PNG"/>
+<imagedata fileref="ChromeBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
+</entry>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="ChromeBrowser.png" format="PNG"/>
+<imagedata fileref="OperaBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
+</entry>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="ChromiumBrowser.png" format="PNG"/>
+<imagedata fileref="YaBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
+</entry>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="KonquerorBrowser.png" format="PNG"/>
+<imagedata fileref="EdgeBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
+</entry>
+<entry>
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="AppleSafariBrowser.png" format="PNG"/>
+<imagedata fileref="SafariBrowser.svg" format="SVG"/>
 </imageobject>
 </inlinemediaobject>
-
-<inlinemediaobject>
-<imageobject>
-<imagedata fileref="OperaBrowser.png" format="PNG"/>
-</imageobject>
-</inlinemediaobject>
-
-<inlinemediaobject>
-<imageobject>
-<imagedata fileref="YaBrowser.png" format="PNG"/>
-</imageobject>
-</inlinemediaobject>
-
+</entry>
+</row>
+<row>
+<entry>✓</entry>
+<entry>✓</entry>
+<entry>✓</entry>
+<entry>✓</entry>
+<entry>?</entry>
+<entry>?</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
 </para>
-
-</section>
-
-<section xml:id="MathJax4SVG_BrowsersSupportStatus_NotSupported">
-<title>Не поддерживаемые браузеры</title>
-
-<para>
-
-<inlinemediaobject>
-<imageobject>
-<imagedata fileref="InternetExplorerBrowser.png" format="PNG"/>
-</imageobject>
-</inlinemediaobject>
-
-</para>
-
-</section>
 
 </section>
 
@@ -346,7 +335,3 @@ class="attvalue">"&mathjax.url;"</tag> как <application>MathJax</application>
 </section>
 
 </article>
-<!--
-vim:indentexpr=
-vim:filetype=docbkxml
--->
