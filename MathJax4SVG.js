@@ -23,7 +23,7 @@ function isHTMLDocument(document)
 	return document instanceof HTMLDocument||document instanceof Document;
 }
 
-function processDocument()
+function processDocument(document)
 {
 	if(isSVGDocument(document)) processSVGDocument(document);
 	else if(isHTMLDocument(document)) processHTMLDocument(document);
@@ -32,6 +32,7 @@ function processDocument()
 if(Document.prototype.getElementsByTagNameNS==undefined)
 Document.prototype.getElementsByTagNameNS=function(namespaceURI, tagName)
 	{
+		// TODO
 		var nl=this.getElementsByTagName(tagName);
 		return nl;
 	};
@@ -197,4 +198,4 @@ function processForeignObject(elForeignObject)
 	setupMathJax();
 }
 
-addEventListener("load", processDocument, false);
+addEventListener("load", ()=>processDocument(document), false);

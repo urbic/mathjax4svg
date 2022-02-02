@@ -6,14 +6,14 @@
 <acronym class="acronym">SVG</acronym></a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_LabelsPlacement">Размещение меток</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Usage_SpecifyingMJURL">Альтернативный <acronym class="acronym">URL</acronym> <span class="application">MathJax</span></a></span></dt></dl></dd><dt><span class="section"><a href="#MathJax4SVG_BrowsersSupportStatus">Состояние поддержки браузеров</a></span></dt><dt><span class="section"><a href="#MathJax4SVG_Author">Автор</a></span></dt></dl></div><p>
 Имеется перевод этой страницы на <a class="link" href="MathJax4SVG-en.xhtml">английский</a> язык.
 </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Descriprion"/>Описание</h2></div></div></div><p>
-Скрипт <code class="filename">mathjax4svg.js</code> обеспечивает поддержку для <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> в документах <acronym class="acronym">SVG</acronym>.
+Скрипт <code class="filename">MathJax4SVG.js</code> обеспечивает поддержку для <span class="application"><a class="application" href="http://mathjax.org">MathJax</a></span> в документах <acronym class="acronym">SVG</acronym>.
 </p><p>
 В настоящее время <span class="application">MathJax</span> отображает
 <acronym class="acronym">MathML</acronym> лишь в документах <acronym class="acronym">(X)HTML</acronym>. Скрипт
 делает простой трюк: он заворачивает <acronym class="acronym">MathML</acronym>
 в <acronym class="acronym">XHTML</acronym> документ и вставляет элемент <code class="sgmltag-element">&lt;script&gt;</code>, ссылающийся на скрипт
 <span class="application">MathJax</span>, в раздел <code class="sgmltag-element">&lt;head&gt;</code> этого документа <acronym class="acronym">XHTML</acronym>.
-</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Download"/>Загрузка</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><a class="link" href="mathjax4svg.js">Скрипт <code class="filename">mathjax4svg.js</code></a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Usage"/>Использование</h2></div></div></div><p>
+</p><div class="informalfigure"><div class="mediaobject"><object type="image/svg+xml" data="examples/NewtonsMethod.svg"/></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Download"/>Загрузка</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><a class="link" href="MathJax4SVG.js">Скрипт <code class="filename">MathJax4SVG.js</code></a></li><li class="listitem"><a class="link" href="https://github.com/urbic/mathjax4svg">Страница проекта на GitHub</a></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="MathJax4SVG_Usage"/>Использование</h2></div></div></div><p>
 Имеется несколько возможностей использовать <acronym class="acronym">SVG</acronym>
 в веб-страницах:
 
@@ -49,7 +49,7 @@
 	<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
 	&gt;</span>
 	<span class="hl-tag">&lt;defs&gt;</span>
-		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"mathjax4svg.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
 	<span class="hl-tag">&lt;/defs&gt;</span>
 	<span class="hl-tag">&lt;circle</span> <span class="hl-attribute">cx</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">cy</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">r</span>=<span class="hl-value">"75"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"lightblue"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"navy"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">/&gt;</span>
 	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">x</span>=<span class="hl-value">"60"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"85"</span><span class="hl-tag">&gt;</span>
@@ -76,7 +76,7 @@
 быть либо разрешены, либо объявлены в декларации типа документа.
 </p><p>
 Если атрибут <code class="sgmltag-attribute">width</code> или <code class="sgmltag-attribute">height</code> не указан, скрипт
-<code class="filename">mathjax4svg.js</code> устанавливает ширину или высоту элемента
+<code class="filename">MathJax4SVG.js</code> устанавливает ширину или высоту элемента
 <code class="sgmltag-element">&lt;foreignObject&gt;</code> автоматически.
 </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="MathJax4SVG_Usage_WithinXHTMLObjects"/>Внутри документов <acronym class="acronym">(X)HTML</acronym>, включающих
 <acronym class="acronym">SVG</acronym> через элементы <code class="sgmltag-element">&lt;object&gt;</code></h3></div></div></div><div class="informalfigure"><div class="mediaobject"><object type="application/xhtml+xml" data="examples/UsageWithinXHTMLObjects.xhtml" width="250" height="150"/></div></div><pre class="programlisting"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
@@ -85,7 +85,7 @@
 	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span><span class="hl-tag">
 	&gt;</span>
 	<span class="hl-tag">&lt;head&gt;</span>
-		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"mathjax4svg.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
 	<span class="hl-tag">&lt;/head&gt;</span>
 	<span class="hl-tag">&lt;body&gt;</span>
 		<span class="hl-tag">&lt;p&gt;</span>
@@ -138,7 +138,7 @@
 	<span class="hl-attribute">version</span>=<span class="hl-value">"1.1"</span><span class="hl-tag">
 	&gt;</span>
 	<span class="hl-tag">&lt;head&gt;</span>
-		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"mathjax4svg.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">src</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">&gt;</span><span class="hl-tag">&lt;/script&gt;</span>
 	<span class="hl-tag">&lt;/head&gt;</span>
 	<span class="hl-tag">&lt;body&gt;</span>
 		<span class="hl-tag">&lt;p&gt;</span>
@@ -227,7 +227,7 @@
 	<span class="hl-attribute">height</span>=<span class="hl-value">"200"</span><span class="hl-tag">
 	&gt;</span>
 	<span class="hl-tag">&lt;defs&gt;</span>
-		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"mathjax4svg.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
+		<span class="hl-tag">&lt;script</span> <span class="hl-attribute">xlink:href</span>=<span class="hl-value">"MathJax4SVG.js"</span> <span class="hl-attribute">type</span>=<span class="hl-value">"application/ecmascript"</span><span class="hl-tag">/&gt;</span>
 	<span class="hl-tag">&lt;/defs&gt;</span>
 	<span class="hl-tag">&lt;rect</span> <span class="hl-attribute">x</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">y</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">width</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">height</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">fill</span>=<span class="hl-value">"seagreen"</span> <span class="hl-attribute">stroke</span>=<span class="hl-value">"darkslategray"</span> <span class="hl-attribute">stroke-width</span>=<span class="hl-value">"2"</span><span class="hl-tag">/&gt;</span>
 	<span class="hl-tag">&lt;foreignObject</span> <span class="hl-attribute">mj4svg:labelX</span>=<span class="hl-value">"50"</span> <span class="hl-attribute">mj4svg:labelY</span>=<span class="hl-value">"100"</span> <span class="hl-attribute">mj4svg:labelPlacement</span>=<span class="hl-value">"left"</span><span class="hl-tag">&gt;</span>
