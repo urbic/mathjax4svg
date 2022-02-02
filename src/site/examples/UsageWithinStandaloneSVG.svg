@@ -12,7 +12,7 @@
 	height="200"
 	>
 	<defs>
-		<script xlink:href="mathjax4svg.js" type="application/ecmascript"/>
+		<script xlink:href="MathJax4SVG.js" type="application/ecmascript"/>
 	</defs>
 	<circle cx="100" cy="100" r="75" fill="lightblue" stroke="navy" stroke-width="2"/>
 	<foreignObject x="60" y="85">

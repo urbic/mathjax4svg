@@ -32,7 +32,7 @@ This page is also available in <link xlink:href="MathJax4SVG-ru.xhtml">Russian</
 <title>Description</title>
 
 <para>
-The <filename>mathjax4svg.js</filename> script provides support for
+The <filename>MathJax4SVG.js</filename> script provides support for
 <application xlink:href="http://mathjax.org">MathJax</application> in
 <acronym>SVG</acronym> documents.
 </para>
@@ -61,7 +61,7 @@ class="element">&lt;head&gt;</tag> section.
 
 <itemizedlist>
 <listitem>
-<link xlink:href="mathjax4svg.js">The <filename>mathjax4svg.js</filename>
+<link xlink:href="MathJax4SVG.js">The <filename>MathJax4SVG.js</filename>
 script</link>
 </listitem>
 <listitem>
@@ -131,7 +131,7 @@ resolved or declared in document type declaration.
 <para>
 If <tag class="attribute">width</tag> or <tag
 class="attribute">height</tag> attribute not specified,
-<filename>mathjax4svg.js</filename> script set the width and the height of <tag
+<filename>MathJax4SVG.js</filename> script set the width and the height of <tag
 class="element">&lt;foreignObject&gt;</tag> automatically.
 </para>
 
