@@ -1,1 +1,0 @@
-../mathjax4svg.js
