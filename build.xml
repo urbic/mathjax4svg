@@ -30,6 +30,7 @@
 			style="${src.site}/xhtml.xsl"
 			basedir="${src.site}"
 			filedirparameter="${src.site}"
+			extension=".xhtml"
 			force="true"
 			>
 			<factory name="com.icl.saxon.TransformerFactoryImpl"/>
@@ -55,14 +56,12 @@
 			<param name="link.mailto.url" expression="${xslt.link.mailto.url}"/>
 			<param name="generate.manifest" expression="0"/>
 			<param name="bibliography.numbered" expression="1"/>
-			<param name="tablecolumns.extension" expression="${xslt.tablecolumns.extension}"/>
-			<param name="table.borders.with.css" expression="${xslt.table.borders.with.css}"/>
-			<param name="bibliography.style" expression="'iso960'"/>
 			<param name="draft.mode" expression="'maybe'"/>
-			<param name="use.webcounters" expression="${xslt.use.webcounters}"/>
 			<param name="highlight.xslthl.config" expression="file://${xslt.highlight.xslthl.config}"/>
 			<param name="polyfill.url" expression="${polyfill.url}"/>
 			<param name="mathjax.url" expression="${mathjax.url}"/>
+			<param name="base.dir" expression="${target.site}"/>
+			<param name="root.filename" expression="${project.title.name}"/>
 		</xslt>
 	</presetdef>
 
@@ -74,9 +73,7 @@
 				out="XXX"
 				destdir="${target.site}"
 				>
-				<param name="root.filename" expression="${project.title.name}"/>
 				<param name="html.ext" expression="-@{lang}.xhtml"/>
-				<param name="base.dir" expression="${target.site}"/>
 				<param name="l10n.gentext.default.language" expression="@{lang}"/>
 			</xslt.preset>
 		</sequential>
@@ -107,8 +104,8 @@
 			<fileset dir="${src.site}" includes="examples/**"/>
 		</copy>
 		<symlink
-			resource="../${ant.project.name}.js"
-			link="${target.site}/examples/${ant.project.name}.js"
+			resource="../${project.title.name}.js"
+			link="${target.site}/examples/${project.title.name}.js"
 			overwrite="true"
 			/>
 		<symlink link="examples" action="delete"/>
