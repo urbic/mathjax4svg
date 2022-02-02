@@ -2,7 +2,7 @@
 
 ## Description
 
-The mathJax4svg.js script provides support for
+The __MathJax4SVG.js__ script provides support for
 [MathJax](https://github.com/mathjax/MathJax) in SVG documents.
 
 [![License](https://img.shields.io/badge/license-zlib%2Fpng-blue.svg)](http://opensource.org/licenses/Zlib)
